@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="IBAGUE TQM. Productos, comercios y talento local. Descubre todo lo bueno que tienes cerca.">
+  <title>IBAGUE TQM | Comercio local</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="preconnect" href="https://rxmikdtpkhmycmdtewoi.supabase.co" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700;750;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:light;--bg:#fff;--surface:#fff;--soft:#f6f6f3;--text:#20211f;--muted:#7a7b77;--line:#e9e9e5;--accent:#287a4a;--deep:#20211f;--red:#dc564a;--green:#398657;--yellow:#e9bc40;--shadow:0 20px 70px #00000014;--inverse:#fff}
+    :root[data-theme=dark]{color-scheme:dark;--bg:#121212;--surface:#191919;--soft:#232323;--text:#f6f5f1;--muted:#a09f99;--line:#ffffff15;--accent:#85b995;--deep:#f6f5f1;--shadow:0 20px 70px #0006;--inverse:#121212}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px;background:var(--bg)}body{margin:0;min-width:320px;background:var(--bg);color:var(--text);font:14px/1.5 "DM Sans",Arial,sans-serif;transition:background .25s,color .25s}button,input,select,textarea{font:inherit}button{color:inherit}button,a,input,select,summary{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-decoration:none}button:disabled{cursor:wait;opacity:.55}svg{width:20px;height:20px;display:block;flex-shrink:0}img{max-width:100%}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:4px}.hidden{display:none!important}.app{min-height:100vh;overflow:clip}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .topbar{width:min(1240px,calc(100% - 96px));height:88px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px;position:relative;z-index:20}.brand-wrap,.brand,.actions,.desktop-nav{display:flex;align-items:center}.brand-wrap{gap:20px}.brand{gap:9px;white-space:nowrap}.wordmark{font-size:23px;font-weight:900;letter-spacing:-1.15px;line-height:1}.wordmark .tqm{font-weight:500;letter-spacing:-.9px}.brand-heart{color:var(--red);width:22px;height:22px;stroke-width:2.1}.brand-tagline{border-left:1px solid var(--line);padding-left:18px;margin-left:14px;color:var(--muted);font-size:10px;line-height:1.6;letter-spacing:.025em}.desktop-nav{gap:29px;margin-left:auto;margin-right:18px;font-size:12px;font-weight:550}.desktop-nav a{padding:10px 0;position:relative}.desktop-nav a:after{content:"";position:absolute;left:0;bottom:3px;height:2px;background:var(--yellow);width:0;transition:width .25s}.desktop-nav a:hover:after{width:100%}.actions{gap:19px}.location{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);white-space:nowrap}.location svg{width:14px;height:14px}.menu-btn{border:0;background:transparent;width:27px;height:34px;padding:0;display:grid;place-items:center}.menu-btn svg{width:21px}.theme{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:30px;background:var(--soft)}.theme span{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;color:var(--muted)}.theme svg{width:14px;height:14px}.theme span.active{color:var(--inverse);background:var(--text)}.account-btn{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:7px;background:var(--bg);padding:9px 13px;font-size:11px;font-weight:600;white-space:nowrap}.account-btn svg{width:15px;height:15px}.account-btn:hover{border-color:var(--text)}
+    .hero{height:386px;min-height:320px;position:relative;isolation:isolate;background:#384439;overflow:hidden}.slides,.slide,.slide>img,.slide>video,.shade{position:absolute;inset:0;width:100%;height:100%}.slide{opacity:0;pointer-events:none;transition:opacity .8s;overflow:hidden}.slide.active{opacity:1;pointer-events:auto}.slide>img,.slide>video{object-fit:cover;object-position:center 53%;transform:scale(1.025);transition:transform 9s linear}.slide.active>img{transform:scale(1.085)}.slide>video{object-fit:contain;background:#121212;transform:none}.shade{z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(16,28,19,.81) 0%,rgba(16,27,20,.61) 37%,rgba(20,30,24,.15) 100%)}.hero-copy{position:relative;z-index:2;width:min(1240px,calc(100% - 96px));height:100%;margin:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding-bottom:8px;pointer-events:none;animation:up .8s both;color:white}.eyebrow{margin:0 0 10px;font-size:9px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}.hero-copy .eyebrow{font-size:9px;color:#f1f0e6;letter-spacing:.2em;margin-bottom:15px}.hero-copy .eyebrow:before{content:"";width:18px;height:2px;background:#e9bc40}.hero h1{font-size:clamp(44px,5.8vw,78px);letter-spacing:-4.2px;line-height:1.08;margin:0 0 8px;font-weight:800}.hero h1 span{font-weight:450;letter-spacing:-3.8px}.hero-subtitle{font-size:25px;letter-spacing:-.6px;font-weight:500;margin:0 0 10px}.hero-description{font-size:12px;color:#e1e3de;margin:0 0 23px;font-weight:400}.hero-cta{display:inline-flex;align-items:center;gap:30px;min-height:43px;padding:0 17px;background:#fff;border:1px solid #fff;border-radius:5px;color:#292c27;font-size:11px;font-weight:600;pointer-events:auto;transition:background .2s,transform .2s}.hero-cta svg{width:17px}.hero-cta:hover{background:#f2f0e7;transform:translateY(-2px)}.slider-controls{position:absolute;z-index:5;width:min(1240px,calc(100% - 96px));left:50%;bottom:22px;transform:translateX(-50%);display:flex;justify-content:space-between;align-items:center}.dots,.arrows{display:flex;gap:7px;align-items:center}.dots button{width:5px;height:5px;min-height:5px;border:0;border-radius:10px;background:#ffffff70;padding:0;transition:width .25s}.dots button.active{width:23px;background:#fff}.arrows button{width:30px;height:30px;border:1px solid #ffffff60;border-radius:50%;display:grid;place-items:center;background:#ffffff0c;color:white;padding:0;transition:background .2s}.arrows svg{width:14px;height:14px}.arrows button:hover{background:#fff2}.play-video{position:absolute;right:5%;top:45%;background:#fff;color:#121212;border:0;padding:11px 16px;border-radius:6px;z-index:6}.hero[data-video=true] .hero-copy,.hero[data-video=true] .shade{display:none}
+    .content{width:min(1240px,calc(100% - 96px));margin:auto;padding:48px 0 0}.heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:22px}.heading h2{margin:0;font-size:29px;letter-spacing:-1.15px;font-weight:650;line-height:1.2}.heading .eyebrow{font-size:8px;letter-spacing:.19em;margin-bottom:9px}.heading-desc{color:var(--muted);font-size:12px;margin:8px 0 0}.product-search{min-width:265px;height:42px;display:flex;align-items:center;gap:12px;padding:0 15px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--muted);font-size:11px;text-align:left}.product-search svg{width:16px;height:16px}.product-search span{flex:1}.product-search kbd{font:9px "DM Sans",Arial,sans-serif;border:1px solid var(--line);border-radius:4px;padding:1px 5px}.product-search:hover{border-color:var(--text)}.shops-panel{position:relative;min-width:0}.shops-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 0 16px}.shops-left,.shops-tools{display:flex;align-items:center;gap:13px}.shops-total{display:flex;align-items:center;gap:7px;font-size:10px;color:var(--muted)}.shops-total b{color:var(--text);font-weight:600}.live-dot{width:5px;height:5px;border-radius:50%;background:var(--green)}.demo-label{font-size:9px;color:var(--muted);border-left:1px solid var(--line);padding-left:13px}.shops-nav{display:flex;gap:6px}.shops-nav button{width:26px;height:26px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:var(--surface);padding:0;transition:background .2s}.shops-nav button:hover{background:var(--soft)}.shops-nav svg{width:12px;height:12px}.swipe-hint{font-size:9px;color:var(--muted)}.shops{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:22px;row-gap:30px;touch-action:pan-y}.shop{display:block;min-width:0;position:relative;animation:up .5s both}.shop:nth-child(2){animation-delay:.07s}.shop:nth-child(3){animation-delay:.14s}.shop:nth-child(4){animation-delay:.21s}.shops .shop:nth-child(n+9){display:none}.shop-image{aspect-ratio:1.08;overflow:hidden;background:var(--soft);border-radius:9px;position:relative}.shop-image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}.shop:hover .shop-image img{transform:scale(1.055)}.price-tag{position:absolute;right:12px;top:12px;background:#fff;color:#282923;border-radius:5px;padding:5px 9px;font-size:11px;font-weight:650;z-index:2;box-shadow:0 1px 7px #00000006}.shop h3{margin:12px 0 5px;font-size:13px;line-height:1.4;font-weight:600;letter-spacing:-.15px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.shop p{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:10px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.shop p svg{width:11px;height:11px;color:var(--green)}.shop .ref-tag{display:none}.shop-arrow{position:absolute;right:1px;bottom:23px;width:14px;height:14px;opacity:0;transition:opacity .2s,transform .2s}.shop:hover .shop-arrow{opacity:1;transform:translate(2px,-2px)}.shops-progress{height:1px;background:var(--line);margin-top:31px;overflow:hidden}.shops-progress i{height:100%;width:12.5%;display:block;background:var(--green);transition:transform .5s}.search{height:48px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;gap:10px;padding:0 13px;color:var(--muted);background:var(--surface)}.search svg{width:17px;height:17px}.search input{width:100%;border:0;outline:0;background:none;color:var(--text);font-size:12px}.search:focus-within{border-color:var(--green)}.search-trigger{border:0;background:transparent;padding:5px;color:var(--muted);display:grid;place-items:center}.search-trigger svg{width:15px;height:15px}.search-count{color:var(--muted);font-size:12px;margin:13px 0}.search-results{max-height:340px;overflow:auto}.empty{min-height:265px;border-block:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px 20px}.empty-icon{color:var(--accent);margin-bottom:5px}.empty-icon svg{width:30px;height:30px}.empty h3{font-size:20px;margin:12px 0 7px;letter-spacing:-.6px}.empty p{color:var(--muted);font-size:13px;max-width:440px;margin:0 0 20px;line-height:1.7}.no-results{padding:60px 15px;text-align:center;color:var(--muted);font-size:13px}.connection-note{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:9px;margin:20px 0 0}.connection-note button{font-size:11px;border:0;background:transparent;color:var(--accent);text-decoration:underline;padding:0}
+    .categories{padding-top:63px;padding-bottom:67px}.categories .heading{align-items:center;margin-bottom:24px}.count{color:var(--muted);font-size:10px}.cat-search{position:relative;max-width:270px;flex:1;z-index:15}.cat-search .search{height:42px}.cat-search .search input{font-size:11px}.cat-clear{border:0;background:transparent;color:var(--muted);padding:3px;font-size:19px;line-height:1}.cat-suggest{position:absolute;top:calc(100% + 7px);left:0;right:0;max-height:280px;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:var(--shadow);animation:fade .2s}.cat-suggest button{width:100%;background:transparent;color:var(--text);border:0;border-radius:5px;padding:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;text-align:left}.cat-suggest button:hover,.cat-suggest button.hl{background:var(--soft)}.cat-suggest small{font-size:9px;color:var(--muted);white-space:nowrap}.cat-suggest p{font-size:12px;color:var(--muted);padding:10px}.cat-suggest-title{padding:7px 10px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.category{height:177px;border:0;border-radius:9px;overflow:hidden;position:relative;text-align:left;color:#fff;background:#3b4138;padding:0}.category>img,.category-shade{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.category>img{transition:transform .6s,opacity .4s}.category:hover>img{transform:scale(1.06)}.category>img.swap{opacity:0;transform:scale(1.07)}.category-shade{background:linear-gradient(0deg,#172018d9,transparent 110%)}.category-label{position:absolute;left:20px;bottom:19px;right:40px;display:flex;flex-direction:column;gap:3px}.category-label strong{font-size:16px;font-weight:550;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.category-label small{font-size:10px;color:#ffffffb0}.category i{position:absolute;right:19px;bottom:23px;font-style:normal;display:grid;place-items:center}.category i svg{width:17px;height:17px}.cat-dots{position:absolute;top:15px;left:19px;display:flex;gap:4px}.cat-dots b{width:4px;height:4px;border-radius:5px;background:#fff8;transition:width .3s}.cat-dots b.on{background:white;width:12px}.category-empty{padding:55px 20px;text-align:center;border-block:1px solid var(--line);color:var(--muted)}footer{width:min(1240px,calc(100% - 96px));margin:auto;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;min-height:105px;gap:24px}.footer-brand{display:flex;gap:8px;align-items:center}.footer-brand .wordmark{font-size:18px}.footer-brand svg{width:17px;height:17px;color:var(--red)}footer p{color:var(--muted);font-size:10px}footer p span{color:var(--red)}.footer-links{display:flex;gap:19px;font-size:10px;color:var(--muted)}.footer-links button{border:0;background:none;color:inherit;font:inherit;padding:0}.footer-links a:hover,.footer-links button:hover{color:var(--text)}
+    .primary{min-height:44px;border:1px solid var(--text);border-radius:7px;padding:0 20px;background:var(--text);color:var(--inverse);font-size:12px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s,opacity .2s}.primary:hover{transform:translateY(-1px);opacity:.9}.primary svg{width:16px;height:16px}.secondary{min-height:42px;border:1px solid var(--line);border-radius:7px;background:var(--surface);padding:0 16px;font-size:12px}.submit{width:100%}.danger{background:var(--red)!important;border-color:var(--red)!important;color:white!important}.backdrop{position:fixed;inset:0;background:#10181265;backdrop-filter:blur(8px);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;animation:fade .2s}.modal{width:min(560px,100%);max-height:calc(100dvh - 48px);overflow:auto;position:relative;border:1px solid var(--line);border-radius:15px;background:var(--surface);padding:34px;box-shadow:0 30px 100px #0002;animation:pop .3s}.modal.small{width:min(450px,100%)}.modal.wide{width:min(810px,100%)}.modal h2{font-size:29px;letter-spacing:-1.1px;line-height:1.2;margin:0 35px 0 0;font-weight:650}.close{position:absolute;right:20px;top:20px;border:1px solid var(--line);width:30px;height:30px;display:grid;place-items:center;padding:0;background:var(--surface);border-radius:50%;z-index:3}.close svg{width:14px;height:14px}.intro{color:var(--muted);font-size:12px;line-height:1.8;margin:13px 25px 24px 0}.modal .search{margin-top:23px}.modal .eyebrow{font-size:9px}.modal form,.modal form>label,.form-col,.form-col>label{display:flex;flex-direction:column}.modal form{gap:16px}.modal form label{display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:600}.modal form input,.modal form select,.modal form textarea{height:45px;border:1px solid var(--line);border-radius:7px;padding:0 12px;background:var(--soft);color:var(--text);width:100%;outline:0;font-size:12px}.modal form input:focus,.modal form select:focus,.modal form textarea:focus{border-color:var(--green)}.modal form textarea{min-height:80px;padding:12px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.form-col{gap:17px;min-width:0}.logo-field{height:100%}.upload{min-height:126px;width:100%;padding:14px;border:1px dashed var(--line);border-radius:9px;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:1;text-align:center;overflow:hidden}.upload span{display:flex;flex-direction:column;align-items:center;gap:7px}.upload span svg{color:var(--accent);width:24px;height:24px}.upload strong{font-size:12px}.upload small{font-size:10px;color:var(--muted);font-weight:400}.upload img{max-height:150px;object-fit:contain}.file{position:absolute;width:1px;height:1px;opacity:0}.error{color:var(--red);font-size:12px;margin:2px 0;line-height:1.7}.notice{color:var(--accent);font-size:12px;line-height:1.7}.storage{display:block;font-size:10px;font-weight:400;text-align:center;color:var(--muted);margin-top:5px}.form-actions{display:flex;flex-direction:column;gap:10px}.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);max-width:calc(100% - 32px);padding:13px 20px;border:1px solid var(--line);border-radius:8px;background:var(--surface);box-shadow:var(--shadow);color:var(--text);font-size:12px;z-index:2000;animation:fade .2s}.auth-tabs{display:flex;gap:15px;border-bottom:1px solid var(--line);margin:0 36px 25px 0}.auth-tab-btn{border:0;border-bottom:2px solid transparent;background:none;color:var(--muted);padding:10px 0;font-size:12px}.auth-tab-btn.active{color:var(--text);border-bottom-color:var(--green)}.name-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.role-selector{display:grid;grid-template-columns:1fr 1fr;gap:10px}.modal form .role-option{padding:11px;border:1px solid var(--line);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-direction:row;gap:8px;background:var(--soft);cursor:pointer;font-size:12px}.role-option input{position:absolute;opacity:0!important;width:1px!important;height:1px!important}.role-option svg{width:17px;height:17px}.role-option.selected{border-color:var(--accent);color:var(--accent)}.role-option:focus-within{outline:2px solid var(--green);outline-offset:2px}.avatar-upload-preview{width:52px;height:52px;object-fit:cover!important;border-radius:50%;background:var(--surface);margin:0 auto 7px}.avatar-prompt{display:block;color:var(--muted);font-size:10px}.auth-avatar{min-height:95px;display:block}.drawer-backdrop{position:fixed;inset:0;background:#10181250;z-index:940;opacity:0;pointer-events:none;transition:opacity .25s}.drawer-backdrop.open{opacity:1;pointer-events:auto}.drawer{position:fixed;inset:0 auto 0 0;width:min(310px,85vw);z-index:950;display:flex;flex-direction:column;background:var(--surface);border-right:1px solid var(--line);transform:translateX(-105%);transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow)}.drawer.open{transform:translateX(0)}.drawer-head{padding:29px 23px;height:90px;border-bottom:1px solid var(--line);position:relative}.drawer-head .wordmark{font-size:20px}.drawer-head .close{top:27px;right:18px}.drawer-nav{display:flex;flex-direction:column;gap:7px;padding:22px 15px}.drawer-item{display:flex;align-items:center;gap:13px;min-height:46px;padding:0 13px;border:0;border-radius:6px;background:none;color:var(--text);font-size:12px;text-align:left}.drawer-item:hover{background:var(--soft)}.drawer-item i{font-style:normal;color:var(--accent)}.drawer-item svg{width:18px;height:18px}.drawer-sep{height:1px;background:var(--line);margin:8px 12px}.drawer-user{display:flex;align-items:center;gap:12px;margin:auto 20px 18px;padding:14px 0;border-top:1px solid var(--line);cursor:pointer}.drawer-user img{width:45px;height:45px;object-fit:cover;border-radius:50%;background:var(--soft)}.du-txt{display:flex;flex-direction:column;align-items:flex-start;gap:3px}.du-name{font-size:13px;font-weight:600}.du-role{font-size:8px;letter-spacing:.1em;color:var(--accent)}.du-hint{font-size:10px;color:var(--muted)}.drawer-foot{margin-top:auto;padding:20px 25px;border-top:1px solid var(--line);font-size:10px;color:var(--muted)}.drawer-user:not(.hidden)+.drawer-foot{margin-top:0}.user-profile-badge{display:none}.sell-btn{display:none!important}
+    #authModal{z-index:1000}#searchModal{z-index:900}#profileModal{z-index:1100}#productsModal{z-index:1150}#passwordModal{z-index:1200}#logoutModal{z-index:1500}#detailModal{z-index:1020}#editorModal{z-index:1250}#supportModal,#downloadsModal{z-index:1300}.profile-head{display:flex;align-items:center;gap:13px;padding-bottom:20px;border-bottom:1px solid var(--line);padding-right:22px}.profile-head>img{width:61px;height:61px;border-radius:50%;object-fit:cover;background:var(--soft)}.profile-head h2{font-size:22px;margin:4px 0 0}.profile-head p{font-size:11px;color:var(--muted);margin:4px 0}.pf-avatar-badge{font-size:8px;letter-spacing:.12em;color:var(--accent);font-weight:600}.pf-head-actions{display:flex;gap:6px;margin:15px 0 0}.pf-head-btn{display:flex;align-items:center;justify-content:center;gap:7px;min-height:36px;border:1px solid var(--line);background:var(--soft);border-radius:6px;padding:0 13px;font-size:10px;font-weight:600}.pf-head-btn svg{width:14px;height:14px}.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);margin:25px 0 10px}.profile-stats>div{text-align:center;border-right:1px solid var(--line)}.profile-stats>div:last-child{border:0}.profile-stats b{display:block;font-size:24px;font-weight:550;letter-spacing:-1px}.profile-stats small{font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}.profile-stats .clickable{cursor:pointer}.profile-stats .clickable small{color:var(--accent)}.pf-section-title{font-size:9px;text-transform:uppercase;letter-spacing:.13em;font-weight:600;color:var(--muted);margin:25px 0 10px}.pf-item,.category-shop{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line);min-width:0}.pf-item img,.category-shop img{width:48px;height:48px;object-fit:cover;border-radius:6px;background:var(--soft);flex-shrink:0}.pf-item>span,.category-shop>span{display:flex;flex-direction:column;min-width:0}.pf-item b,.category-shop strong{font-size:12px;font-weight:550;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pf-item small,.category-shop small{font-size:10px;color:var(--muted)}.pf-price{margin-left:auto;font-size:11px;font-weight:600;white-space:nowrap}.pf-empty{color:var(--muted);font-size:12px;line-height:1.8;padding:16px 0}.category-shops{margin-top:19px}.logout-icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#dc564a13;color:var(--red);margin:0 auto 15px}.logout-actions{display:flex;gap:10px;margin-top:22px}.logout-actions button{flex:1}.support-head{display:flex;align-items:center;gap:12px;padding:20px 70px 20px 25px;border-bottom:1px solid var(--line)}.support-head h3{margin:0;font-size:18px;letter-spacing:-.4px}.support-head .eyebrow{margin-bottom:4px}.modal.support{width:min(900px,100%);padding:0;min-height:400px}.support-body{min-height:350px;padding:27px}.support-body iframe{border:0;width:100%;height:65dvh}.support-body details{border-bottom:1px solid var(--line);padding:15px 0;font-size:12px}.support-body summary{cursor:pointer;font-weight:600}.support-body details p{color:var(--muted);line-height:1.9}.support-loader{padding:40px;color:var(--muted);text-align:center}.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:10px;align-items:center}.detail-photo{width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;background:var(--soft)}.detail-price{font-size:28px;letter-spacing:-1px;margin:20px 0 14px;font-weight:600}.detail-shop{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px}.detail-shop svg{width:15px;height:15px;color:var(--accent)}.detail-description{font-size:12px;line-height:1.9;color:var(--muted)}.detail-actions{display:flex;gap:8px;margin-top:20px}.detail-actions .primary{flex:1}.favorite-btn{width:44px;height:44px;background:var(--surface);border:1px solid var(--line);border-radius:7px;display:grid;place-items:center}.favorite-btn.on{color:var(--red)}.favorite-btn.on svg{fill:var(--red)}.catalog-grid{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.catalog-grid .shop h3{font-size:12px}.catalog-grid .shop-image{aspect-ratio:1}.catalog-tools{display:flex;gap:9px;margin-top:18px}.catalog-tools .primary{min-height:37px}.edit-button{margin-top:8px;font-size:10px;padding:5px 9px;border:1px solid var(--line);border-radius:4px;background:var(--soft)}.download-list{display:flex;flex-direction:column;margin:20px 0}.download-list a{padding:14px 0;border-bottom:1px solid var(--line);font-size:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}.download-list small{color:var(--muted)}.download-list svg{width:16px;height:16px}.pwa-banner{position:fixed;bottom:20px;left:20px;z-index:9999;width:min(380px,calc(100% - 40px));background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:17px;display:flex;gap:14px;align-items:center;animation:pop .4s}.pwa-content{flex:1}.pwa-info{display:flex;flex-direction:column;gap:4px}.pwa-info strong{font-size:12px}.pwa-info span{font-size:10px;color:var(--muted)}.pwa-actions{display:flex;align-items:center;gap:8px}.pwa-btn-ring{background:var(--text);color:var(--inverse);border:0;border-radius:5px;padding:8px 12px;font-size:11px}.pwa-close{border:0;background:none;color:var(--muted);font-size:20px;padding:0 3px}
+    .topbar{height:80px}.hero{height:350px}.content{padding-top:40px}.shop-image{aspect-ratio:1.15}.categories{padding-top:63px}.download-all{width:100%;margin-top:12px}.file{width:1px!important;height:1px!important;pointer-events:none}.detail-photo{height:auto}.hero[data-custom=true] .hero-copy{display:none}.hero[data-custom=true] .shade{background:linear-gradient(0deg,#12121260,transparent 40%)}
+    @keyframes up{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @media(min-width:1500px){.hero{height:435px}.hero-copy{padding-bottom:13px}.hero h1{font-size:84px}}
+    @media(max-width:1100px){.topbar,.content,.hero-copy,.slider-controls,footer{width:calc(100% - 64px)}.brand-tagline,.location{display:none}.desktop-nav{margin:0 auto;gap:22px}.actions{gap:12px}.hero h1{font-size:67px}.shops{gap:25px 17px}.category{height:160px}}
+    @media(max-width:760px){.topbar{height:72px;width:calc(100% - 36px);gap:14px}.brand-wrap{gap:13px}.wordmark{font-size:20px}.brand{gap:6px}.brand-heart{width:18px;height:18px}.desktop-nav{display:none}.actions{gap:9px}.account-btn{border:0;padding:5px}.account-btn span{display:none}.account-btn svg{width:19px;height:19px}.theme span{width:23px;height:23px}.theme{padding:2px}.hero{height:365px}.hero-copy,.slider-controls{width:calc(100% - 44px)}.hero-copy{padding-bottom:21px}.hero-copy .eyebrow{font-size:8px}.hero h1{font-size:clamp(43px,9vw,65px);letter-spacing:-2.8px}.hero h1 span{letter-spacing:-2.8px}.hero-subtitle{font-size:22px;margin-top:5px}.hero-description{max-width:275px;line-height:1.8;font-size:11px}.hero-cta{font-size:11px}.slide>img{object-position:60% 50%}.shade{background:linear-gradient(90deg,#13241cd1,#172a2060)}.slider-controls{bottom:18px}.content{width:calc(100% - 40px);padding-top:34px}.heading{gap:15px;align-items:center;margin-bottom:20px}.heading h2{font-size:24px;letter-spacing:-.8px}.heading .eyebrow{font-size:7px}.product-search{min-width:40px;width:40px;height:40px;justify-content:center;padding:0}.product-search span,.product-search kbd{display:none}.shops{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}.shops .shop:nth-child(n+5){display:none}.shop-image{border-radius:7px;aspect-ratio:1}.price-tag{right:8px;top:8px;font-size:10px;padding:4px 7px}.shop h3{font-size:12px;margin-top:10px;margin-bottom:4px}.shop p{font-size:9px}.shop-arrow{display:none}.shops-head{padding-bottom:13px}.shops-total{font-size:9px}.demo-label{font-size:8px;padding-left:8px}.shops-left{gap:8px}.swipe-hint{display:none}.shops-progress{margin-top:24px}.categories{padding-top:40px;padding-bottom:42px}.categories .heading{flex-wrap:wrap;gap:17px}.cat-search{max-width:100%;min-width:100%}.categories .heading-desc{font-size:11px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category{height:151px;border-radius:7px}.category-label{left:13px;bottom:15px;right:25px}.category-label strong{font-size:13px}.category-label small{font-size:9px}.category i{right:12px;bottom:19px}.category i svg{width:13px;height:13px}.cat-dots{left:13px;top:12px}footer{width:calc(100% - 40px);flex-wrap:wrap;justify-content:center;padding:25px 0;gap:13px;text-align:center}footer p{margin:0;flex-basis:100%}.footer-links{font-size:10px;gap:20px}.footer-brand .wordmark{font-size:18px}.backdrop{padding:14px}.modal{padding:29px 22px;max-height:calc(100dvh - 28px);border-radius:12px}.modal h2{font-size:26px}.close{top:17px;right:15px}.form-grid{grid-template-columns:1fr;gap:17px}.detail-layout{grid-template-columns:1fr;gap:18px}.detail-photo{max-height:270px;object-fit:cover}.detail-layout h2{font-size:24px}.detail-price{font-size:24px;margin:12px 0}.detail-description{margin:10px 0}.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.catalog-tools{flex-wrap:wrap}.profile-head h2{font-size:20px}.profile-head>img{width:50px;height:50px}.profile-head p{font-size:10px}.pf-head-actions{flex-wrap:wrap}.support-body{padding:21px}.support-head{padding-left:21px}.pwa-banner{bottom:12px;left:12px;width:calc(100% - 24px)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.slide>img{transform:none!important}}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#productos">Ir a productos</a>
+  <div id="pwaInstallBanner" class="pwa-banner hidden"><div class="pwa-content"><div class="pwa-info"><strong>IBAGUE TQM, siempre cerca</strong><span id="pwaText">Instala la app en tu dispositivo.</span></div></div><div class="pwa-actions"><button id="pwaInstallBtn" class="pwa-btn-ring">Instalar</button><button id="pwaCloseBtn" class="pwa-close" aria-label="Cerrar">&times;</button></div></div>
+  <div class="drawer-backdrop" id="menuBackdrop"></div>
+  <aside class="drawer" id="sideMenu" aria-label="Men&uacute; principal" aria-hidden="true" inert>
+    <div class="drawer-head"><span id="drawerLogo" class="wordmark">IBAGUE <span class="tqm">TQM</span></span><button class="close" id="menuClose" aria-label="Cerrar men&uacute;"><span data-icon="close"></span></button></div>
+    <nav class="drawer-nav">
+      <button class="drawer-item" id="loginTopBtn"><i data-icon="user"></i>Iniciar sesi&oacute;n o registrarse</button>
+      <button class="drawer-item hidden" id="menuProfileBtn"><i data-icon="user"></i>Mi perfil</button><div class="drawer-sep"></div>
+      <a class="drawer-item" href="#productos" data-menu-link><i data-icon="box"></i>Ver productos</a>
+      <a class="drawer-item" href="#categorias" data-menu-link><i data-icon="store"></i>Ver categor&iacute;as</a>
+      <button class="drawer-item hidden" id="menuSellBtn"><i data-icon="store"></i>&iquest;Quieres vender?</button>
+    </nav>
+    <button class="drawer-user hidden" id="drawerUser" style="background:none;border-right:0;border-left:0;border-bottom:0;text-align:left"><img id="drawerAvatar" alt="Tu foto de perfil"><span class="du-txt"><span class="du-name" id="drawerName">Usuario</span><span class="du-role" id="drawerRole">COMPRADOR</span><span class="du-hint">Ver mi perfil</span></span></button>
+    <div class="drawer-foot">Tu ciudad. Tu gente. Tu comercio.</div>
+  </aside>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-wrap"><button class="menu-btn" id="menuBtn" aria-label="Abrir men&uacute;" aria-controls="sideMenu" aria-expanded="false"><span data-icon="menu"></span></button><a class="brand" href="#inicio" aria-label="IBAGUE TQM, inicio"><span id="brandLogo" class="wordmark">IBAGUE <span class="tqm">TQM</span></span><svg class="brand-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.8 4.7a5.4 5.4 0 0 0-7.6 0L12 5.9l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.7a5.4 5.4 0 0 0 0-7.6Z"/></svg></a><span class="brand-tagline">Tu ciudad. Tu gente.<br>Todo m&aacute;s cerca.</span></div>
+      <nav class="desktop-nav" aria-label="Explorar"><a href="#productos">Productos</a><a href="#categorias">Categor&iacute;as</a></nav>
+      <div class="actions"><span class="location"><span data-icon="pin"></span>Ibagu&eacute;, Tolima</span><button class="theme" id="themeBtn" aria-label="Cambiar a modo oscuro"><span id="sun" data-icon="sun" class="active"></span><span id="moon" data-icon="moon"></span></button><button class="account-btn" id="accountBtn"><i data-icon="user"></i><span id="accountLabel">Mi cuenta</span></button><button class="primary sell-btn hidden" id="sellBtn" data-open-create>&iquest;Quieres vender?</button><div id="userProfileBadge" class="user-profile-badge hidden"><img id="userAvatarImg" alt="Avatar"><span id="userNameTxt"></span><small id="userRoleTxt"></small></div></div>
+    </header>
+    <section class="hero" id="inicio" aria-label="Bienvenido a IBAGUE TQM" aria-roledescription="carrusel">
+      <div class="slides" id="slidesContainer"><div class="slide active" data-fallback="true"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Panorama_Ibague.JPG/1280px-Panorama_Ibague.JPG" alt="Panorama de Ibagu&eacute; y sus monta&ntilde;as" width="1280" height="960" fetchpriority="high" decoding="async"></div><div class="shade"></div></div>
+      <div class="hero-copy"><p class="eyebrow">El comercio de nuestra ciudad</p><h1>IBAGUE <span>TQM</span></h1><p class="hero-subtitle">Todo lo bueno, aqu&iacute; cerquita.</p><p class="hero-description">Descubre productos, comercios y talento que hacen &uacute;nica a Ibagu&eacute;.</p><a class="hero-cta" href="#productos">Explorar productos<span data-icon="arrow"></span></a></div>
+      <div class="slider-controls"><div class="dots" id="dots"></div><div class="arrows"><button id="prev" aria-label="Banner anterior"><span data-icon="left"></span></button><button id="next" aria-label="Banner siguiente"><span data-icon="right"></span></button></div></div>
+    </section>
+    <section class="content" id="productos" aria-labelledby="productsTitle">
+      <div class="heading"><div><p class="eyebrow">Descubre lo que tienes cerca</p><h2 id="productsTitle">Encuentra tu pr&oacute;ximo favorito.</h2></div><button class="product-search" data-open-search><i data-icon="search"></i><span>Buscar productos, comercios...</span><kbd>/</kbd></button></div>
+      <div id="shopContent"><div class="empty"><span class="empty-icon" data-icon="box"></span><h3>Cargando productos</h3><p>Estamos preparando el directorio de tu ciudad.</p></div></div>
+      <p id="connectionNote" class="connection-note hidden" role="status"></p>
+    </section>
+    <section class="content categories" id="categorias" aria-labelledby="categoriesTitle">
+      <div class="heading"><div><p class="eyebrow">Un mundo por descubrir</p><h2 id="categoriesTitle">Explora por categor&iacute;a.</h2><p class="heading-desc">Lo que buscas, en los comercios de tu ciudad. <span class="count" id="categoryCount"></span></p></div><div class="cat-search" id="catSearchBox"><label class="search"><i data-icon="search"></i><input id="catSearch" placeholder="&iquest;Qu&eacute; tienes en mente?" aria-label="Buscar categor&iacute;a" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="catSuggest" aria-expanded="false"><button class="cat-clear hidden" id="catClear" aria-label="Limpiar b&uacute;squeda">&times;</button></label><div class="cat-suggest hidden" id="catSuggest" role="listbox"></div></div></div>
+      <div id="categoryContent"></div>
+    </section>
+    <footer><a href="#inicio" class="footer-brand"><span class="wordmark">IBAGUE <span class="tqm">TQM</span></span><span data-icon="heart"></span></a><p>Hecho con <span>amor</span> por lo nuestro. Impulsamos el comercio local.</p><div class="footer-links"><button id="footerHelp">Ayuda</button><button id="downloadsBtn">Archivos del proyecto</button><button id="creditsBtn">Cr&eacute;ditos</button></div></footer>
+  </main>
+  <div class="backdrop hidden" id="searchModal"><section class="modal small" role="dialog" aria-modal="true" aria-labelledby="searchTitle"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow">Encuentra algo especial</p><h2 id="searchTitle">Busca cerca de ti.</h2><label class="search"><i data-icon="search"></i><input id="search" placeholder="Producto, referencia o comercio" aria-label="Buscar productos" autocomplete="off"></label><p class="search-count" id="searchCount"></p><div class="search-results" id="searchResults"></div></section></div>
+  <div class="backdrop hidden" id="createModal"><section class="modal wide" role="dialog" aria-modal="true" aria-labelledby="createTitle"><button class="close" data-close-create aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow">Tu comercio tambi&eacute;n hace ciudad</p><h2 id="createTitle">Crea tu comercio</h2><p class="notice hidden" id="onboardNote">Paso 1 de 2. Registra tu comercio; despu&eacute;s completar&aacute;s tu cuenta.</p><p class="intro">Registra tu tienda, comparte tus productos y conecta con clientes que est&aacute;n cerca de ti.</p><form id="shopForm"><div class="form-grid"><div class="form-col"><label>Nombre del comercio<input id="shopName" maxlength="60" placeholder="El nombre de tu tienda" required></label><label>Categor&iacute;a<select id="shopCategory" required><option value="" disabled selected>Selecciona una categor&iacute;a</option></select></label></div><div class="form-col"><label class="logo-field">Logo de tu tienda<button class="upload" type="button" id="uploadBtn"><span id="uploadPrompt"><i data-icon="upload"></i><strong>Sube una imagen</strong><small>PNG, JPG, GIF o WEBP. M&aacute;ximo 3 MB.</small><small>La optimizamos antes de subirla.</small></span><img id="preview" class="hidden" alt="Vista previa del logo"></button><input class="file" id="fileInput" type="file" accept="image/png,image/jpeg,image/gif,image/webp"></label></div></div><p class="error hidden" id="formError" role="alert"></p><div class="form-actions"><button class="primary submit" id="publishBtn" type="submit">Publicar comercio<span data-icon="arrow"></span></button><small class="storage">Tus datos se guardan en el proyecto de IBAGUE TQM.</small></div></form></section></div>
+  <div class="backdrop hidden" id="categoryModal"><section class="modal small" role="dialog" aria-modal="true" aria-labelledby="categoryTitle"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow">Compra local</p><h2 id="categoryTitle"></h2><div class="category-shops" id="categoryShops"></div></section></div>
+  <div class="backdrop hidden" id="supportModal"><section class="modal support" role="dialog" aria-modal="true" aria-labelledby="supportTitle"><div class="support-head"><div><p class="eyebrow">Estamos para ayudarte</p><h3 id="supportTitle">Soporte IBAGUE TQM</h3></div><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button></div><div class="support-body"><div class="support-loader hidden" id="supportLoader">Cargando soporte...</div><iframe id="supportFrame" class="hidden" title="Soporte IBAGUE TQM" allow="clipboard-write; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="localHelp"><p class="intro">Encuentra respuestas para disfrutar del comercio de tu ciudad.</p><details open><summary>&iquest;C&oacute;mo encuentro un producto?</summary><p>Usa el buscador para escribir un producto, su referencia o el nombre del comercio. Tambi&eacute;n puedes explorar las categor&iacute;as.</p></details><details><summary>&iquest;C&oacute;mo publico mi comercio?</summary><p>Crea una cuenta con el rol Vendedor y registra el nombre, la categor&iacute;a y el logo de tu tienda. Si ya eres comprador, abre el men&uacute; y elige &laquo;&iquest;Quieres vender?&raquo;.</p></details><details><summary>&iquest;D&oacute;nde encuentro mis productos?</summary><p>Abre Mi cuenta y selecciona Administrar. Verifica tu contrase&ntilde;a para acceder a tu cat&aacute;logo. Puedes agregar, editar o retirar productos de tu tienda.</p></details><details><summary>No recib&iacute; el correo de confirmaci&oacute;n</summary><p>Revisa la carpeta de correo no deseado. La confirmaci&oacute;n la env&iacute;a Supabase al correo con el que te registraste. El administrador debe configurar el servicio de correo y el dominio de la aplicaci&oacute;n.</p></details><details><summary>&iquest;Qu&eacute; es el cat&aacute;logo de muestra?</summary><p>Es una vista previa del dise&ntilde;o. Sus tiendas y productos son ejemplos, no ofertas reales. No permite compras ni se guarda en la base de datos del cliente.</p></details></div></div></section></div>
+  <div class="backdrop hidden" id="passwordModal"><section class="modal small" role="dialog" aria-modal="true" aria-labelledby="pwTitle"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow">Acceso propietario</p><h2 id="pwTitle">Administrar mi negocio</h2><p class="intro" id="pwIntro">Ingresa la contrase&ntilde;a de tu cuenta para administrar tu tienda y tu cat&aacute;logo.</p><form id="passwordForm"><label>Contrase&ntilde;a<input type="password" id="pwInput" autocomplete="current-password" required placeholder="Tu contrase&ntilde;a"></label><p class="error hidden" id="pwError" role="alert"></p><button class="primary submit" id="pwSubmit">Verificar y continuar</button></form></section></div>
+  <div class="backdrop hidden" id="profileModal"><section class="modal profile" role="dialog" aria-modal="true" aria-labelledby="pfName"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><div class="profile-head"><img id="pfAvatar" alt="Tu foto de perfil"><div><span class="pf-avatar-badge" id="pfRole">COMPRADOR</span><h2 id="pfName">Usuario</h2><p id="pfEmail"></p></div></div><div class="pf-head-actions" id="pfHeadActions"><button class="pf-head-btn hidden" id="pfAdminBtn"><i data-icon="gear"></i>Administrar</button><button class="pf-head-btn hidden" id="pfSupportBtn"><i data-icon="help"></i>Soporte</button><button class="pf-head-btn" id="pfPhotoBtn"><i data-icon="upload"></i>Cambiar foto</button><input type="file" class="hidden" id="pfPhotoInput" accept="image/png,image/jpeg,image/webp"></div><div class="profile-stats" id="pfStats"></div><div id="pfBody"></div><button class="primary submit" id="pfLogout" style="margin-top:23px">Cerrar sesi&oacute;n</button></section></div>
+  <div class="backdrop hidden" id="productsModal"><section class="modal products" role="dialog" aria-modal="true" aria-labelledby="pmTitle"><button class="close" id="pmClose" aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow">Mi cat&aacute;logo</p><h2 id="pmTitle">Mis productos</h2><div class="pm-list" id="pmList"></div></section></div>
+  <div class="backdrop hidden" id="logoutModal"><section class="modal small" role="dialog" aria-modal="true" aria-labelledby="logoutTitle" style="text-align:center"><div class="logout-icon" data-icon="logout"></div><h2 id="logoutTitle" style="margin:0">&iquest;Cerrar sesi&oacute;n?</h2><p class="intro" style="margin:14px 0 0">Tendr&aacute;s que iniciar sesi&oacute;n de nuevo para acceder a tu cuenta.</p><div class="logout-actions"><button class="secondary" id="logoutCancelBtn">Cancelar</button><button class="primary danger" id="logoutConfirmBtn">S&iacute;, cerrar sesi&oacute;n</button></div></section></div>
+  <div class="backdrop hidden" id="authModal"><section class="modal small" role="dialog" aria-modal="true" aria-labelledby="authTitle"><button class="close" id="authCloseBtn" aria-label="Cerrar"><span data-icon="close"></span></button><div class="auth-tabs" role="tablist"><button class="auth-tab-btn active" id="tabLoginBtn" role="tab" aria-selected="true">Iniciar sesi&oacute;n</button><button class="auth-tab-btn" id="tabRegisterBtn" role="tab" aria-selected="false">Registrarse</button></div><h2 id="authTitle" class="sr-only">Tu cuenta IBAGUE TQM</h2>
+    <form id="loginForm"><div><p class="eyebrow">Bienvenido a IBAGUE TQM</p><h2>Qu&eacute; bueno verte.</h2><p class="intro" style="margin-bottom:5px">Entra y sigue descubriendo lo nuestro.</p></div><label>Correo electr&oacute;nico<input type="email" id="loginEmail" autocomplete="email" required placeholder="tu@correo.com"></label><label>Contrase&ntilde;a<input type="password" id="loginPassword" autocomplete="current-password" required placeholder="Tu contrase&ntilde;a"></label><p class="error hidden" id="loginError" role="alert"></p><button class="primary submit" id="loginSubmitBtn">Ingresar<span data-icon="arrow"></span></button></form>
+    <form id="registerForm" class="hidden"><div><p class="eyebrow">S&eacute; parte de IBAGUE TQM</p><h2>Crea tu cuenta.</h2></div><p class="notice hidden" id="regNotice"></p><div class="name-row"><label>Nombre<input id="regFirstName" required maxlength="60" placeholder="Tu nombre" autocomplete="given-name"></label><label>Apellido<input id="regLastName" required maxlength="60" placeholder="Tu apellido" autocomplete="family-name"></label></div><label>N&uacute;mero de tel&eacute;fono<input type="tel" id="regPhone" required maxlength="25" placeholder="300 123 4567" autocomplete="tel" inputmode="tel"></label><div><label>Selecciona tu rol</label><div class="role-selector" style="margin-top:7px"><label class="role-option selected" id="roleCompradorLbl"><input type="radio" name="userRole" value="comprador" checked><i data-icon="bag"></i>Comprador</label><label class="role-option" id="roleVendedorLbl"><input type="radio" name="userRole" value="vendedor"><i data-icon="store"></i>Vendedor</label></div></div><label>Foto de perfil (selfie)<input type="file" id="regAvatarInput" class="file" accept="image/png,image/jpeg,image/gif,image/webp" capture="user"><button class="upload auth-avatar" id="regAvatarBtn" type="button"><img id="regAvatarPreview" class="avatar-upload-preview" alt="Tu foto de perfil"><small class="avatar-prompt">Toca para tomar o elegir una foto</small></button></label><label>Correo electr&oacute;nico<input type="email" id="regEmail" autocomplete="email" required placeholder="tu@correo.com"></label><label>Contrase&ntilde;a<input type="password" id="regPassword" autocomplete="new-password" required minlength="6" placeholder="M&iacute;nimo 6 caracteres"></label><p class="error hidden" id="regError" role="alert"></p><button class="primary submit" id="regSubmitBtn">Crear cuenta<span data-icon="arrow"></span></button></form>
+  </section></div>
+  <div class="backdrop hidden" id="detailModal"><section class="modal wide" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><div id="detailContent"></div></section></div>
+  <div class="backdrop hidden" id="catalogModal"><section class="modal wide" role="dialog" aria-modal="true" aria-labelledby="catalogTitle"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow" id="catalogEyebrow">Comercio local</p><h2 id="catalogTitle"></h2><p class="intro" id="catalogIntro"></p><div class="catalog-tools" id="catalogTools"></div><div id="catalogContent"></div></section></div>
+  <div class="backdrop hidden" id="editorModal"><section class="modal small" role="dialog" aria-modal="true" aria-labelledby="editorTitle"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow">Administrar cat&aacute;logo</p><h2 id="editorTitle">Nuevo producto</h2><form id="productForm" style="margin-top:23px"><label>Nombre<input id="productName" required maxlength="120"></label><div class="name-row"><label>Precio (COP)<input type="number" id="productPrice" required min="0" step="1"></label><label>Referencia<input id="productRef" maxlength="60"></label></div><label>Descripci&oacute;n<textarea id="productDescription" maxlength="1000"></textarea></label><label>Foto del producto<input type="file" id="productImage" accept="image/png,image/jpeg,image/webp"></label><small class="storage">M&aacute;ximo 3 MB. Se optimiza a menos de 200 KB.</small><p class="error hidden" id="productError" role="alert"></p><button class="primary submit" id="productSaveBtn">Guardar producto</button><button class="secondary hidden" id="productDeleteBtn" type="button">Eliminar producto</button></form></section></div>
+  <div class="backdrop hidden" id="downloadsModal"><section class="modal small" role="dialog" aria-modal="true" aria-labelledby="downloadsTitle"><button class="close" data-close aria-label="Cerrar"><span data-icon="close"></span></button><p class="eyebrow">Entrega del proyecto</p><h2 id="downloadsTitle">Todo, en tus manos.</h2><p class="intro">HTML independiente, base de datos y archivos de instalaci&oacute;n para el nuevo cliente.</p><div class="download-list"><a href="./ibague-tqm.html" download="index.html"><span>HTML completo <small> / index.html</small></span><i data-icon="download"></i></a><a href="./01-ibague-tqm.sql" download><span>Base de datos y seguridad <small> / SQL</small></span><i data-icon="download"></i></a><a href="./02-verificacion.sql" download><span>Verificaci&oacute;n de instalaci&oacute;n <small> / SQL</small></span><i data-icon="download"></i></a><a href="./manifest.json" download><span>Manifest PWA <small> / JSON</small></span><i data-icon="download"></i></a><a href="./sw.js" download><span>Cach&eacute; local <small> / Service Worker</small></span><i data-icon="download"></i></a><a href="./icon.svg" download><span>Icono de instalaci&oacute;n <small> / SVG</small></span><i data-icon="download"></i></a><a href="./catalogo.html" download><span>Acceso al cat&aacute;logo <small> / HTML</small></span><i data-icon="download"></i></a><a href="./negocio.html" download><span>Acceso al comercio <small> / HTML</small></span><i data-icon="download"></i></a><a href="./LEEME.md" download><span>Gu&iacute;a de configuraci&oacute;n <small> / LEEME</small></span><i data-icon="download"></i></a></div><p class="notice">Ejecuta primero el SQL en Supabase. Los archivos no eliminan cuotas ni sustituyen la configuraci&oacute;n de correo del proyecto.</p></section></div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
+  <script>
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const svg = paths => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+paths+'</svg>';
+  const icons = {
+    menu:svg('<path d="M4 6h16M4 12h16M4 18h11"/>'),
+    store:svg('<path d="M4 10v10h16V10M3 4h18l-2 6H5L3 4Z"/><path d="M9 20v-6h6v6"/>'),
+    sun:svg('<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"/>'),
+    moon:svg('<path d="M20.5 14.1A8.4 8.4 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"/>'),
+    plus:svg('<path d="M12 5v14M5 12h14"/>'),
+    search:svg('<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>'),
+    upload:svg('<path d="M12 16V3M7 8l5-5 5 5M4 15v5h16v-5"/>'),
+    download:svg('<path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/>'),
+    close:svg('<path d="m6 6 12 12M18 6 6 18"/>'),
+    gear:svg('<circle cx="12" cy="12" r="3"/><path d="m9 3-.7 2.1-2 .9-2.1-.4-1.6 2.8 1.4 1.7v2.3L2.6 14l1.6 2.8 2.1-.4 2 .9L9 20h3l.8-2.2 2-.9 2.1.4 1.6-2.8-1.4-1.7v-2.3l1.4-1.6-1.6-2.8-2.1.4-2-.9L12 3Z" transform="translate(1 0)"/>'),
+    help:svg('<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .2c0 1.8-2.5 1.8-2.5 4M12 17h.01"/>'),
+    logout:svg('<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4m7 14 5-5-5-5m5 5H9"/>'),
+    box:svg('<path d="m21 8.5-9-5.5-9 5.5v7l9 5.5 9-5.5v-7ZM3 8.5l9 5.5 9-5.5M12 21v-7M7.5 5.8l9 5.4"/>'),
+    bag:svg('<path d="M6 7h12l1 14H5L6 7ZM9 7a3 3 0 0 1 6 0"/>'),
+    user:svg('<circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/>'),
+    heart:svg('<path d="M20.8 4.7a5.4 5.4 0 0 0-7.6 0L12 5.9l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.7a5.4 5.4 0 0 0 0-7.6Z"/>'),
+    pin:svg('<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>'),
+    arrow:svg('<path d="M4 12h16m-6-6 6 6-6 6"/>'),
+    northeast:svg('<path d="M5 19 19 5M5 5h14v14"/>'),
+    left:svg('<path d="m14 5-7 7 7 7"/>'),
+    right:svg('<path d="m10 5 7 7-7 7"/>'),
+    check:svg('<path d="m5 12 4 4L19 6"/>')
+  };
+  function hydrateIcons(root=document){root.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=icons[el.dataset.icon]||''})}
+  hydrateIcons();
+  const params = new URLSearchParams(location.search);
+  const PREVIEW = params.get('preview') === '1';
+  const PREFIX = 'ibague-tqm-';
+  const SUPABASE_URL = 'https://rxmikdtpkhmycmdtewoi.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4bWlrZHRwa2hteWNtZHRld29pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4Njc4NDQsImV4cCI6MjEwNzQ0Mzg0NH0.NkKqlLEEY_eIBfAn3J3OkYXPmxLYEyibA0Tps7rLbo0';
+  // Only the public anon key belongs here. RLS enforces ownership on the server.
+  const FORMSPREE_ENDPOINT = '';
+  const SUPPORT_URL = '';
+  const PUBLIC_CACHE_TTL = 10 * 60 * 1000;
+  const PROFILE_FIELDS = 'id,full_name,first_name,last_name,phone,role,avatar_url';
+  const SHOP_FIELDS = 'id,business_id,name,category,logo,owner_id,description,phone';
+  const PRODUCT_FIELDS = 'id,name,reference,price,image,business_id,category,description';
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const saveData = () => !!navigator.connection?.saveData;
+  let backendRestricted = false;
+  async function apiFetch(input, init={}) {
+    const controller = new AbortController();
+    const sourceSignal = init.signal || (input instanceof Request ? input.signal : null);
+    const abort = () => controller.abort(sourceSignal?.reason);
+    if(sourceSignal?.aborted) abort();
+    else sourceSignal?.addEventListener('abort', abort, {once:true});
+    const timeout = setTimeout(()=>controller.abort(), 14000);
+    try {
+      const response = await fetch(input, {...init, signal:controller.signal});
+      if(response.status === 402) backendRestricted = true;
+      return response;
+    } finally { clearTimeout(timeout); sourceSignal?.removeEventListener('abort', abort); }
+  }
+  const _supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth:{persistSession:true, autoRefreshToken:true, detectSessionInUrl:true},
+    global:{fetch:apiFetch}
+  }) : null;
+  let currentUserProfile=null, currentAuthUser=null, regAvatarFile=null, commerceDraft=null;
+  let onboardingMode=false, upgradeMode=false, pendingAuthAction=null, previewFile=null;
+  let shops=[], products=[], sellerProducts=[], catalogProducts=[], catalogShop=null, editingProduct=null;
+  let dataIsDemo=false, current=0, sliderTimer=null, shopsPausedUntil=0, progressIndex=0;
+  const FALLBACK_IMG = 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="#efefeb"/><g fill="none" stroke="#92998d" stroke-width="3" stroke-linejoin="round"><path d="M145 181v84h110v-84m-120-41h130l-13 41H148l-13-41Z"/><path d="M182 265v-47h36v47"/></g><text x="200" y="308" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b9287" letter-spacing="2">IBAGUE TQM</text></svg>');
+  const AVATAR_IMG = 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="#eeeee9"/><g fill="none" stroke="#88907f" stroke-width="2"><circle cx="50" cy="38" r="14"/><path d="M24 83v-8a26 26 0 0 1 52 0v8"/></g></svg>');
+  $('regAvatarPreview').src=AVATAR_IMG;
+  function readStore(key, fallback=null){try{return JSON.parse(localStorage.getItem(PREFIX+key))??fallback}catch{return fallback}}
+  function writeStore(key,value){try{localStorage.setItem(PREFIX+key,JSON.stringify(value));return true}catch{return false}}
+  function removeStore(key){try{localStorage.removeItem(PREFIX+key)}catch{}}
+  function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function norm(v){return String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+  function safeMedia(v, fallback=FALLBACK_IMG){
+    if(!v || typeof v!=='string')return fallback;
+    if(v===FALLBACK_IMG||v===AVATAR_IMG||v.startsWith('blob:'))return v;
+    try{const u=new URL(v,location.href);return u.protocol==='https:'||(u.origin===location.origin&&u.protocol==='http:')?u.href:fallback}catch{return fallback}
+  }
+  function formatPrice(value){
+    if(value===null||value===undefined||value==='')return 'Consultar';
+    let n=typeof value==='number'?value:Number(String(value).replace(/[^\d.,-]/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.'));
+    return Number.isFinite(n)?'$ '+n.toLocaleString('es-CO',{maximumFractionDigits:0}):'Consultar';
+  }
+  function shopKey(s){return s?String(s.business_id||s.id||''):''}
+  function shopKeys(s){return s?[s.business_id,s.id].filter(Boolean).map(String):[]}
+  function showToast(message){$('toast').textContent=message;$('toast').classList.remove('hidden');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>$('toast').classList.add('hidden'),4600)}
+  function setError(id,message){$(id).textContent=message;$(id).classList.toggle('hidden',!message)}
+  function backendMessage(error){
+    if(backendRestricted||error?.status===402)return 'El proyecto esta temporalmente restringido por Supabase. El administrador debe revisar la cuota de la organizacion.';
+    if(!_supabase)return 'No se pudo cargar la conexion. Comprueba tu acceso a internet y vuelve a intentarlo.';
+    if(error?.code==='42P01'||error?.code==='PGRST205')return 'Falta instalar la base de datos. Ejecuta 01-ibague-tqm.sql en el proyecto del nuevo cliente.';
+    if(error?.code==='42501')return 'No hay permisos para esta operacion. Revisa las politicas SQL y tu sesion.';
+    return 'No pudimos completar la solicitud. Comprueba la conexion y la configuracion del proyecto.';
+  }
+  function requireBackend(){if(!_supabase)throw new Error('No hay conexion con Supabase.');return _supabase}
+  function theme(value){
+    const t=value==='dark'?'dark':'light';document.documentElement.dataset.theme=t;writeStore('theme',t);
+    $('sun').classList.toggle('active',t==='light');$('moon').classList.toggle('active',t==='dark');
+    $('themeBtn').setAttribute('aria-label','Cambiar a modo '+(t==='dark'?'claro':'oscuro'));
+    document.querySelector('meta[name="theme-color"]').content=t==='dark'?'#121212':'#ffffff';
+  }
+  theme(readStore('theme',PREVIEW?'light':'dark'));
+  $('themeBtn').onclick=()=>theme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+  document.addEventListener('error',event=>{const el=event.target;if(el instanceof HTMLImageElement&&!el.dataset.failed){el.dataset.failed='true';el.removeAttribute('srcset');el.src=el.closest('.profile-head,.drawer-user')?AVATAR_IMG:FALLBACK_IMG}},true);
+
+  const modalStack=[];let previousMenuFocus=null;
+  function syncOverlay(){
+    const active=modalStack.length>0, menu=$('sideMenu').classList.contains('open');
+    document.body.style.overflow=active||menu?'hidden':'';document.querySelector('.app').inert=active||menu;
+    document.querySelectorAll('.backdrop').forEach(el=>{const top=modalStack.at(-1)?.id===el.id;el.inert=active&&!top;el.setAttribute('aria-hidden',String(!top))});
+    if(active||menu){clearTimeout(sliderTimer);syncVideo()}else showSlide(current);
+  }
+  function openModal(id){
+    if(!$(id))return;
+    const exists=modalStack.findIndex(m=>m.id===id);if(exists!==-1)modalStack.splice(exists,1);
+    modalStack.push({id,focus:document.activeElement});$(id).classList.remove('hidden');syncOverlay();
+    requestAnimationFrame(()=>$(id).querySelector('input:not([type=file]):not([type=radio]),button,a[href],summary')?.focus({preventScroll:true}));
+  }
+  function closeModal(id){
+    const index=modalStack.findIndex(m=>m.id===id);if(index<0)return;const item=modalStack.splice(index,1)[0];
+    $(id).classList.add('hidden');syncOverlay();
+    if(item.focus?.isConnected&&!item.focus.closest('.hidden'))item.focus.focus({preventScroll:true});
+  }
+  function closeAll(){while(modalStack.length){const item=modalStack.pop();$(item.id).classList.add('hidden')}syncOverlay()}
+  function openMenu(){previousMenuFocus=document.activeElement;$('sideMenu').classList.add('open');$('sideMenu').inert=false;$('sideMenu').setAttribute('aria-hidden','false');$('menuBackdrop').classList.add('open');$('menuBtn').setAttribute('aria-expanded','true');syncOverlay();$('menuClose').focus()}
+  function closeMenu(){$('sideMenu').classList.remove('open');$('sideMenu').inert=true;$('sideMenu').setAttribute('aria-hidden','true');$('menuBackdrop').classList.remove('open');$('menuBtn').setAttribute('aria-expanded','false');syncOverlay();previousMenuFocus?.focus()}
+  $('menuBtn').onclick=openMenu;$('menuClose').onclick=closeMenu;$('menuBackdrop').onclick=closeMenu;
+  document.querySelectorAll('[data-menu-link]').forEach(a=>a.addEventListener('click',closeMenu));
+  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>closeModal(b.closest('.backdrop').id));
+  document.querySelectorAll('.backdrop').forEach(m=>m.addEventListener('click',event=>{if(event.target!==m)return;if(m.id==='createModal')closeCreateModal();else if(m.id==='authModal')dismissAuth();else closeModal(m.id)}));
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){
+      if(!$('catSuggest').classList.contains('hidden')){hideSuggestions();return}
+      const id=modalStack.at(-1)?.id;
+      if(id==='authModal')dismissAuth();else if(id==='createModal')closeCreateModal();else if(id)closeModal(id);else closeMenu();
+    }
+    if(event.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&!modalStack.length){event.preventDefault();openSearchModal()}
+    if(event.key==='Tab'){
+      const panel=modalStack.length?$(modalStack.at(-1).id):$('sideMenu').classList.contains('open')?$('sideMenu'):null;
+      if(!panel)return;const focusable=[...panel.querySelectorAll('button:not([disabled]),a[href],input:not([type=file]):not([disabled]),select,textarea,summary,[tabindex="0"]')].filter(el=>el.getClientRects().length&&!el.closest('.hidden'));
+      const first=focusable[0],last=focusable.at(-1);if(!first)return;
+      if(event.shiftKey&&(document.activeElement===first||!panel.contains(document.activeElement))){event.preventDefault();last.focus()}
+      else if(!event.shiftKey&&(document.activeElement===last||!panel.contains(document.activeElement))){event.preventDefault();first.focus()}
+    }
+  });
+
+  const pexels=(id,width=540)=>'https://images.pexels.com/photos/'+id+'/pexels-photo-'+id+'.jpeg?auto=compress&cs=tinysrgb&fit=crop&w='+width+'&h='+width;
+  const unsplash=(id,width=540)=>'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w='+width+'&q=75';
+  const demoShops=[
+    {id:'demo-cafe',business_id:'demo-cafe',name:'Origen del Tolima',category:'Cafeterias',logo:pexels(17077385),cover:unsplash('photo-1442512595331-e89e73853f31'),description:'Un ejemplo del talento cafetero de nuestra region.'},
+    {id:'demo-tech',business_id:'demo-tech',name:'Distrito Tech',category:'Tecnologia',logo:pexels(3394648),cover:unsplash('photo-1498049794561-7780e7231661')},
+    {id:'demo-home',business_id:'demo-home',name:'Casa de Tierra',category:'Hogar y decoracion',logo:pexels(31785816),cover:unsplash('photo-1600210492486-724fe5c67fb0')},
+    {id:'demo-moda',business_id:'demo-moda',name:'Andar Local',category:'Moda y accesorios',logo:unsplash('photo-1549298916-b41d501d3772'),cover:unsplash('photo-1445205170230-053b83016050')},
+    {id:'demo-bakery',business_id:'demo-bakery',name:'Miga Artesanal',category:'Panaderias y pastelerias',logo:unsplash('photo-1555507036-ab1f4038808a'),cover:unsplash('photo-1509440159596-0249088772ff')},
+    {id:'demo-green',business_id:'demo-green',name:'Raiz Viva',category:'Flores y plantas',logo:unsplash('photo-1485955900006-10f4d324d411'),cover:unsplash('photo-1416879595882-3373a0480b5b')}
+  ].map(s=>({...s,_demo:true,owner_id:null,phone:''}));
+  const demoRows=[
+    {id:'demo-p1',name:'Cafe de origen tolimense',reference:'CAF-250',price:28000,image:pexels(17077385),business_id:'demo-cafe',description:'Cafe de especialidad, tostado medio. Presentacion de 250 g.'},
+    {id:'demo-p2',name:'Audifonos inalambricos',reference:'AUD-01',price:149900,image:pexels(3394648),business_id:'demo-tech',description:'Diseno comodo, sonido claro y conexion inalambrica.'},
+    {id:'demo-p3',name:'Mug en ceramica artesanal',reference:'CER-04',price:38000,image:pexels(31785816),business_id:'demo-home',description:'Una pieza para acompanar tus pequenos rituales de cada dia.'},
+    {id:'demo-p4',name:'Tenis urbanos clasicos',reference:'TEN-08',price:189900,image:unsplash('photo-1549298916-b41d501d3772'),business_id:'demo-moda',description:'Comodidad y un estilo que combina con tus planes.'},
+    {id:'demo-p5',name:'Bolso tejido a mano',reference:'BOL-02',price:85000,image:pexels(5591743),business_id:'demo-moda',description:'Fibras naturales, detalles hechos a mano y mucho estilo local.'},
+    {id:'demo-p6',name:'Croissant de mantequilla',reference:'PAN-06',price:8500,image:unsplash('photo-1555507036-ab1f4038808a'),business_id:'demo-bakery',description:'Horneado artesanalmente para disfrutar cada manana.'},
+    {id:'demo-p7',name:'Camiseta esencial',reference:'CAM-01',price:45000,image:unsplash('photo-1521572163474-6864f9cf17ab'),business_id:'demo-moda',description:'Una prenda versatil para todos los dias.'},
+    {id:'demo-p8',name:'Planta con matera de ceramica',reference:'PLA-05',price:42000,image:unsplash('photo-1485955900006-10f4d324d411'),business_id:'demo-green',description:'Un toque de naturaleza para tu espacio favorito.'}
+  ];
+  const displayNames={'Cafeterias':'Cafeter\u00edas','Tecnologia':'Tecnolog\u00eda','Hogar y decoracion':'Hogar y decoraci\u00f3n','Panaderias y pastelerias':'Panader\u00edas y pasteler\u00edas','Cafe de origen tolimense':'Caf\u00e9 de origen tolimense','Audifonos inalambricos':'Aud\u00edfonos inal\u00e1mbricos','Mug en ceramica artesanal':'Mug en cer\u00e1mica artesanal','Tenis urbanos clasicos':'Tenis urbanos cl\u00e1sicos','Planta con matera de ceramica':'Planta con matera de cer\u00e1mica'};
+  const display=v=>displayNames[v]||v;
+  function mapProductRow(r){const shop=shops.find(s=>shopKeys(s).includes(String(r.business_id)));return {_id:String(r.id),_name:display(r.name||'Producto'),_ref:r.reference||'',_price:r.price,_img:r.image||'',_bid:String(r.business_id||''),_cat:r.category||shop?.category||'',_shop:shop?.name||'',_raw:r,_demo:String(r.id).startsWith('demo-')}}
+  function useDemo(){dataIsDemo=true;shops=demoShops;products=demoRows.map(mapProductRow);renderProducts();renderCategories()}
+  function invalidatePublicCache(){removeStore('public-catalog');removeStore('public-banners')}
+  function getCachedCatalog(allowExpired=false){const entry=readStore('public-catalog');return entry&&Array.isArray(entry.shops)&&Array.isArray(entry.products)&&entry.project===SUPABASE_URL&&(allowExpired||Date.now()-entry.time<PUBLIC_CACHE_TTL)?entry:null}
+  function applyCatalog(data){dataIsDemo=false;shops=data.shops||[];products=(data.products||[]).map(mapProductRow);renderProducts();renderCategories()}
+  async function fetchShops(){const {data,error}=await requireBackend().from('shops').select(SHOP_FIELDS).order('created_at',{ascending:false}).limit(1000);if(error)throw error;shops=data||[];return shops}
+  async function fetchProducts(){const {data,error}=await requireBackend().from('products').select(PRODUCT_FIELDS).order('created_at',{ascending:false}).limit(200);if(error)throw error;products=(data||[]).map(mapProductRow);return data||[]}
+  async function loadCatalog(force=false){
+    const cached=getCachedCatalog();if(cached&&!force){if(PREVIEW&&!cached.shops.length&&!cached.products.length)useDemo();else applyCatalog(cached);return true}
+    if(PREVIEW&&!products.length)useDemo();
+    try{
+      await fetchShops();const rows=await fetchProducts();dataIsDemo=false;
+      writeStore('public-catalog',{time:Date.now(),project:SUPABASE_URL,shops,products:rows});
+      if(PREVIEW&&!shops.length&&!rows.length)useDemo();else{renderProducts();renderCategories()}
+      $('connectionNote').classList.add('hidden');return true;
+    }catch(error){
+      const stale=getCachedCatalog(true);
+      if(stale&&(stale.shops.length||stale.products.length))applyCatalog(stale);else if(PREVIEW)useDemo();else{shops=[];products=[];renderProducts();renderCategories()}
+      $('connectionNote').classList.remove('hidden');
+      $('connectionNote').innerHTML=esc(PREVIEW?'Vista previa. Los ejemplos no representan ofertas reales.':stale?'Mostrando el ultimo catalogo guardado. '+backendMessage(error):backendMessage(error))+' <button type="button" id="retryConnection">Volver a conectar</button>';
+      $('retryConnection').onclick=async()=>{const btn=$('retryConnection');btn.disabled=true;btn.textContent='Conectando...';await loadCatalog(true)};return false;
+    }
+  }
+  function productBid(p){const shop=shops.find(s=>shopKeys(s).includes(p._bid));return shop?shopKey(shop):p._bid}
+  function productHref(p){const bid=productBid(p);return 'catalogo.html'+(bid?'?id='+encodeURIComponent(bid):'')+(PREVIEW?(bid?'&':'?')+'product='+encodeURIComponent(p._id)+'&preview=1':'')}
+  function imageMarkup(src,alt,extra=''){const url=safeMedia(src);return '<img src="'+esc(url)+'" alt="'+esc(alt)+'" loading="lazy" decoding="async" width="540" height="540" '+(url.startsWith(SUPABASE_URL+'/')?'crossorigin="anonymous" ':'')+extra+'>'}
+  function renderProductCard(p){return '<a class="shop product-card" href="'+productHref(p)+'" data-pid="'+esc(p._id)+'"><div class="shop-image">'+imageMarkup(p._img,p._name)+'<span class="price-tag">'+formatPrice(p._price)+'</span></div><h3>'+esc(p._name)+'</h3><p>'+icons.store+'<span>'+esc(p._shop||'Comercio local')+'</span></p><span class="shop-arrow">'+icons.northeast+'</span></a>'}
+  function visibleProductsCount(){return matchMedia('(min-width:761px)').matches?8:4}
+  function filteredProducts(){const q=norm($('search').value.trim());return products.filter(p=>!q||norm([p._name,p._ref,p._shop,p._cat].join(' ')).includes(q))}
+  function renderSearchResults(list){
+    const q=$('search').value.trim();$('searchCount').textContent=q?(list.length?list.length+' resultado'+(list.length===1?'':'s')+' para "'+q+'"':'No encontramos resultados para "'+q+'"'):'Busca por nombre, referencia o comercio.';
+    $('searchResults').innerHTML=q?list.slice(0,12).map(p=>'<a class="pf-item product-card" href="'+productHref(p)+'" data-pid="'+esc(p._id)+'">'+imageMarkup(p._img,'')+'<span><b>'+esc(p._name)+'</b><small>'+esc((p._ref?'REF '+p._ref+' / ':'')+p._shop)+'</small></span><span class="pf-price">'+formatPrice(p._price)+'</span></a>').join(''):'';
+  }
+  function renderProducts(){
+    const list=filteredProducts();renderSearchResults(list);
+    if(!products.length){$('shopContent').innerHTML='<div class="empty"><span class="empty-icon">'+icons.box+'</span><h3>Lo bueno esta por llegar.</h3><p>Los productos apareceran aqui cuando los comercios publiquen sus catalogos.</p><a class="primary" href="#categorias">Explorar comercios '+icons.arrow+'</a></div>';return}
+    if(!list.length){$('shopContent').innerHTML='<div class="no-results">No encontramos productos con esa busqueda.<br><button class="secondary" id="clearProductFilter" style="margin-top:15px">Ver todos los productos</button></div>';$('clearProductFilter').onclick=()=>{$('search').value='';renderProducts()};return}
+    $('shopContent').innerHTML='<div class="shops-panel grid-panel"><div class="shops-head"><span class="shops-left"><span class="shops-total"><span class="live-dot"></span><b>'+list.length+'</b> productos para descubrir</span>'+(dataIsDemo?'<span class="demo-label">Catalogo de muestra</span>':'')+'</span><div class="shops-tools"><span class="swipe-hint">Un poco de todo, muy cerca de ti</span><div class="shops-nav"><button type="button" data-shops-prev aria-label="Productos anteriores">'+icons.left+'</button><button type="button" data-shops-next aria-label="Mas productos">'+icons.right+'</button></div></div></div><div class="shops" id="shopsTrack">'+list.map(renderProductCard).join('')+'</div><div class="shops-progress"><i></i></div></div>';
+    bindShopsSlider();
+  }
+  function openSearchModal(){openModal('searchModal');requestAnimationFrame(()=>$('search').focus())}
+  document.querySelectorAll('[data-open-search]').forEach(b=>b.onclick=openSearchModal);
+  let searchTimeout;$('search').addEventListener('input',()=>{clearTimeout(searchTimeout);searchTimeout=setTimeout(renderProducts,140)});
+  function recentsKey(){return 'recent-'+(currentUserProfile?.id||'guest')}
+  function getRecents(){return readStore(recentsKey(),[])}
+  function trackProductView(p){const item={id:p._id,name:p._name,ref:p._ref,price:p._price,img:p._img,bid:p._bid,shop:p._shop,ts:Date.now()};writeStore(recentsKey(),[item,...getRecents().filter(x=>x.id!==item.id)].slice(0,12))}
+  function rotateShops(track,direction){
+    if(!track||track.children.length<2)return;
+    if(direction<0)track.prepend(track.lastElementChild);else track.append(track.firstElementChild);
+    if(!reducedMotion.matches)[...track.children].slice(0,visibleProductsCount()).forEach(el=>el.animate([{opacity:.5,transform:'translateY(7px)'},{opacity:1,transform:'translateY(0)'}],{duration:350,easing:'ease-out'}));
+    progressIndex=(progressIndex+direction+8)%8;const bar=document.querySelector('.shops-progress i');if(bar)bar.style.transform='translateX('+(progressIndex*100)+'%)';
+  }
+  function bindShopsSlider(){
+    const track=$('shopsTrack');if(!track)return;const pause=()=>{shopsPausedUntil=Date.now()+8000};
+    document.querySelector('[data-shops-prev]').onclick=()=>{pause();rotateShops(track,-1)};document.querySelector('[data-shops-next]').onclick=()=>{pause();rotateShops(track,1)};
+    track.addEventListener('pointerenter',pause);track.addEventListener('focusin',pause);
+    let start=null;track.addEventListener('touchstart',e=>{start={x:e.touches[0].clientX,y:e.touches[0].clientY};pause()},{passive:true});
+    track.addEventListener('touchend',e=>{if(!start)return;const dx=e.changedTouches[0].clientX-start.x,dy=e.changedTouches[0].clientY-start.y;start=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){rotateShops(track,dx<0?1:-1);pause()}},{passive:true});
+  }
+  function isVisible(el){if(!el)return false;const rect=el.getBoundingClientRect();return rect.bottom>0&&rect.top<innerHeight}
+  setInterval(()=>{const track=$('shopsTrack');if(document.hidden||reducedMotion.matches||modalStack.length||Date.now()<shopsPausedUntil||!isVisible(track)||track?.matches(':hover')||track?.contains(document.activeElement))return;if(track&&track.children.length>visibleProductsCount())rotateShops(track,1)},4000);
+
+  let catFilter='',suggestIndex=-1;
+  function categoryList(){const map=new Map();shops.forEach(s=>{if(s.category)map.set(s.category,(map.get(s.category)||0)+1)});return [...map].sort((a,b)=>a[0].localeCompare(b[0],'es'))}
+  function renderCategories(){
+    const entries=categoryList();$('categoryCount').textContent=entries.length?' / '+entries.length+' categorias':'';$('catSearchBox').classList.toggle('hidden',!entries.length);
+    $('categoryContent').innerHTML=entries.length?'<div class="category-grid" id="categoryGrid">'+entries.map(([category,n])=>{const list=shops.filter(s=>s.category===category);return '<button class="category" data-category="'+esc(category)+'" data-idx="0">'+imageMarkup(list[0].cover||list[0].logo,display(category))+'<span class="category-shade"></span>'+(n>1?'<span class="cat-dots">'+list.slice(0,8).map((s,i)=>'<b class="'+(i===0?'on':'')+'"></b>').join('')+'</span>':'')+'<span class="category-label"><strong>'+esc(display(category))+'</strong><small>'+n+' '+(n===1?'comercio por descubrir':'comercios por descubrir')+'</small></span><i>'+icons.northeast+'</i></button>'}).join('')+'</div><p class="no-results hidden" id="catNoResults">No encontramos esa categoria. Intenta con otra palabra.</p>':'<div class="category-empty">Las categorias apareceran cuando se registren los primeros comercios.</div>';
+    document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>openCategory(b.dataset.category));applyCategoryFilter();
+  }
+  function openCategory(category){
+    $('categoryTitle').textContent=display(category);$('categoryShops').innerHTML=shops.filter(s=>s.category===category).map(s=>'<a href="negocio.html?id='+encodeURIComponent(shopKey(s))+(PREVIEW?'&preview=1':'')+'" class="category-shop" data-shop="'+esc(shopKey(s))+'">'+imageMarkup(s.logo,'')+'<span><strong>'+esc(s.name)+'</strong><small>'+esc(display(category))+(s._demo?' / Comercio de muestra':'')+'</small></span><span class="pf-price">'+icons.northeast+'</span></a>').join('');openModal('categoryModal');
+    if(!PREVIEW)$('categoryShops').querySelectorAll('a').forEach(link=>{link.target='_blank';link.rel='noopener noreferrer'});
+  }
+  function hideSuggestions(){$('catSuggest').classList.add('hidden');$('catSearch').setAttribute('aria-expanded','false');$('catSearch').removeAttribute('aria-activedescendant');suggestIndex=-1}
+  function renderCatSuggest(){
+    const q=norm($('catSearch').value.trim()),list=categoryList().filter(([c])=>!q||norm(c).includes(q));suggestIndex=-1;
+    $('catSuggest').innerHTML=(q?'':'<div class="cat-suggest-title">Categorias disponibles</div>')+(list.length?list.map(([c,n],i)=>'<button type="button" role="option" aria-selected="false" id="suggest-'+i+'" data-sug="'+esc(c)+'"><span>'+esc(display(c))+'</span><small>'+n+' '+(n===1?'comercio':'comercios')+'</small></button>').join(''):'<p>No encontramos categorias con esa busqueda.</p>');
+    $('catSuggest').classList.remove('hidden');$('catSearch').setAttribute('aria-expanded','true');$('catSuggest').querySelectorAll('[data-sug]').forEach(b=>b.onmousedown=e=>{e.preventDefault();selectCategory(b.dataset.sug)});
+  }
+  function selectCategory(category){$('catSearch').value=display(category);catFilter=category;hideSuggestions();$('catClear').classList.remove('hidden');applyCategoryFilter();openCategory(category)}
+  function applyCategoryFilter(){const grid=$('categoryGrid');if(!grid)return;let shown=0;[...grid.children].forEach(b=>{const visible=!catFilter||norm(b.dataset.category).includes(norm(catFilter));b.classList.toggle('hidden',!visible);if(visible)shown++});$('catNoResults')?.classList.toggle('hidden',shown>0)}
+  $('catSearch').addEventListener('focus',renderCatSuggest);
+  $('catSearch').addEventListener('input',()=>{catFilter=$('catSearch').value.trim();$('catClear').classList.toggle('hidden',!catFilter);applyCategoryFilter();renderCatSuggest()});
+  $('catSearch').addEventListener('keydown',e=>{const buttons=[...$('catSuggest').querySelectorAll('[data-sug]')];if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(!buttons.length)return;suggestIndex=(suggestIndex+(e.key==='ArrowDown'?1:-1)+buttons.length)%buttons.length;buttons.forEach((b,i)=>{b.classList.toggle('hl',i===suggestIndex);b.setAttribute('aria-selected',String(i===suggestIndex))});$('catSearch').setAttribute('aria-activedescendant',buttons[suggestIndex].id);buttons[suggestIndex].scrollIntoView({block:'nearest'})}else if(e.key==='Enter'){e.preventDefault();const selected=buttons[Math.max(0,suggestIndex)];if(selected)selectCategory(selected.dataset.sug)}});
+  $('catSearch').addEventListener('blur',()=>setTimeout(hideSuggestions,140));$('catClear').onclick=()=>{$('catSearch').value='';catFilter='';$('catClear').classList.add('hidden');applyCategoryFilter();$('catSearch').focus()};
+  setInterval(()=>{
+    if(document.hidden||reducedMotion.matches||saveData()||modalStack.length||!isVisible($('categoryGrid')))return;
+    document.querySelectorAll('[data-category]').forEach(button=>{
+      const list=shops.filter(s=>s.category===button.dataset.category);if(list.length<2||!isVisible(button)||button.matches(':hover,:focus'))return;
+      const index=((+button.dataset.idx||0)+1)%list.length;button.dataset.idx=index;const image=button.querySelector('img');image.classList.add('swap');
+      setTimeout(()=>{image.src=safeMedia(list[index].logo);image.classList.remove('swap');button.querySelectorAll('.cat-dots b').forEach((b,i)=>b.classList.toggle('on',i===index))},350);
+    });
+  },8000);
+
+  // Only the visible banner gets a source. Inactive videos never preload.
+  let bannerInView=true;
+  function syncVideo(){
+    document.querySelectorAll('.slide video').forEach(video=>{
+      const active=video.closest('.slide').classList.contains('active')&&bannerInView&&!document.hidden&&!modalStack.length&&!$('sideMenu').classList.contains('open');
+      if(!active){video.pause();return}
+      if((saveData()||reducedMotion.matches)&&!video.dataset.userPlayed)return;
+      if(!video.src&&video.dataset.src)video.src=video.dataset.src;
+      video.play().catch(()=>video.closest('.slide').querySelector('.play-video')?.classList.remove('hidden'));
+    });
+  }
+  function showSlide(index){
+    clearTimeout(sliderTimer);const slides=[...document.querySelectorAll('.slide')];if(!slides.length)return;
+    current=(index+slides.length)%slides.length;
+    slides.forEach((slide,i)=>{slide.classList.toggle('active',i===current);slide.setAttribute('aria-hidden',String(i!==current));if(i===current){const img=slide.querySelector('img[data-src]');if(img){img.src=img.dataset.src;delete img.dataset.src}}});
+    $('inicio').dataset.video=String(!!slides[current].querySelector('video'));
+    [...$('dots').children].forEach((dot,i)=>{dot.classList.toggle('active',i===current);dot.setAttribute('aria-current',String(i===current))});syncVideo();
+    if(slides.length>1&&!document.hidden&&!reducedMotion.matches&&bannerInView&&!modalStack.length&&!$('sideMenu').classList.contains('open'))sliderTimer=setTimeout(()=>showSlide(current+1),10000);
+  }
+  function initSlider(){
+    const slides=[...document.querySelectorAll('.slide')];$('dots').innerHTML=slides.map((s,i)=>'<button type="button" aria-label="Ver banner '+(i+1)+'" data-slide="'+i+'"></button>').join('');
+    $('dots').querySelectorAll('[data-slide]').forEach(b=>b.onclick=()=>showSlide(+b.dataset.slide));
+    $('prev').onclick=()=>showSlide(current-1);$('next').onclick=()=>showSlide(current+1);
+    $('prev').disabled=slides.length<2;$('next').disabled=slides.length<2;showSlide(0);
+  }
+  function renderBanners(rows){
+    if(!rows?.length)return;
+    $('inicio').dataset.custom='true';
+    const container=$('slidesContainer');container.querySelectorAll('.slide').forEach(s=>s.remove());
+    rows.forEach((item,index)=>{
+      const slide=document.createElement('div');slide.className='slide'+(index===0?' active':'');
+      if(item.video_url){
+        const video=document.createElement('video');video.dataset.src=safeMedia(item.video_url,'');video.preload='none';video.muted=true;video.loop=true;video.playsInline=true;
+        if(item.image_url)video.poster=safeMedia(item.image_url);slide.append(video);
+        const play=document.createElement('button');play.type='button';play.className='play-video'+(!saveData()&&!reducedMotion.matches?' hidden':'');play.textContent='Reproducir video';play.onclick=()=>{video.dataset.userPlayed='true';video.controls=true;play.classList.add('hidden');syncVideo()};slide.append(play);
+      }else if(item.image_url){const img=document.createElement('img');img.alt=item.title||'Comercio local de Ibague';img.decoding='async';if(item.image_url.startsWith(SUPABASE_URL+'/'))img.crossOrigin='anonymous';if(index===0)img.src=safeMedia(item.image_url);else img.dataset.src=safeMedia(item.image_url);slide.append(img)}else return;
+      container.insertBefore(slide,container.querySelector('.shade'));
+    });
+    initSlider();
+  }
+  async function fetchBannerVideos(){
+    const cached=readStore('public-banners');if(cached&&Date.now()-cached.time<PUBLIC_CACHE_TTL){renderBanners(cached.data);return}
+    if(!_supabase)return;
+    try{const {data,error}=await _supabase.from('shop_banners').select('id,title,image_url,video_url,order_index').is('business_id',null).order('order_index',{ascending:true}).limit(6);if(error)return;writeStore('public-banners',{time:Date.now(),data});renderBanners(data)}catch{}
+  }
+  new IntersectionObserver(entries=>{bannerInView=entries[0].isIntersecting;if(!bannerInView)clearTimeout(sliderTimer);else showSlide(current);syncVideo()},{threshold:.15}).observe($('inicio'));
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(sliderTimer);else showSlide(current);syncVideo()});
+  initSlider();
+
+  if(PREVIEW){
+    const alternatives=[
+      {image_url:unsplash('photo-1442512595331-e89e73853f31',1400),title:'El cafe, una forma de encontrarnos'},
+      {image_url:'https://images.pexels.com/photos/15699964/pexels-photo-15699964.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1400&h=700',title:'Paisaje de la region cafetera colombiana'}
+    ];
+    alternatives.forEach(item=>{const slide=document.createElement('div');slide.className='slide';const image=document.createElement('img');image.dataset.src=item.image_url;image.alt=item.title;image.decoding='async';slide.append(image);$('slidesContainer').insertBefore(slide,$('slidesContainer').querySelector('.shade'))});
+    initSlider();
+  }
+
+  const categoryGroups = {
+    'Alimentos, Bebidas y Proveedur\u00eda':['Restaurantes','Cafeter\u00edas','Panader\u00edas y Pasteler\u00edas','Bares y Discotecas','Supermercados y Minimercados','Carnicer\u00edas','Salsamentarias','Pescader\u00edas','Dulcer\u00edas'],
+    'Comercio y Retail':['Tiendas de ropa','Zapater\u00edas y Venta de Calzado','Joyer\u00edas','Tiendas de Maquillaje y Cosm\u00e9ticos','Tiendas de Aseo','Librer\u00edas y Papeler\u00edas','Tecnolog\u00eda','Comercio electr\u00f3nico','Negocios de venta al detal'],
+    'Salud, Est\u00e9tica y Bienestar':['Centros M\u00e9dicos','Centros Odontol\u00f3gicos','\u00d3pticas','Farmacias','Tiendas Naturistas','Salones de Belleza','Barber\u00edas','Centros de Est\u00e9tica','Spas','Spas de U\u00f1as','Estudios de Tatuajes y Piercing','Gimnasios y Deportes'],
+    'Mascotas':['Veterinarias','Petshop','Paseadores de Mascotas'],
+    'Educaci\u00f3n':['Jardines Infantiles','Colegios','Escuelas de M\u00fasica','Educaci\u00f3n y Academias'],
+    'Servicios T\u00e9cnicos y Reparaciones':['Servicio T\u00e9cnico de Celulares','Servicio T\u00e9cnico de Televisores','Servicio T\u00e9cnico de Impresoras','Reparaci\u00f3n de Calzado','Sastrer\u00edas'],
+    'Construcci\u00f3n, Oficios y Mantenimiento':['Ferreter\u00edas y Construcci\u00f3n','Contratistas para Remodelaciones y Construcci\u00f3n','Fabricantes de Cocinas','Vidrier\u00edas','Electricistas','Cerrajeros','Carpinteros','Plomeros','Pintores','Mantenimiento y Limpieza'],
+    'Automotriz':['Lavaderos de Autos','Lavaderos de Motos','Automotriz y Talleres'],
+    'Servicios Profesionales, Agencias y Finanzas':['Agencias de Marketing, Dise\u00f1o y Publicidad','Servicios Profesionales','Agencias de Viajes','Bienes Ra\u00edces e Inmobiliarias','Corresponsales Bancarios','Casas de Empe\u00f1o'],
+    'Log\u00edstica y Otros Servicios':['Empresas de Env\u00edos o Mensajer\u00eda','Lavander\u00edas','Hoteles y Turismo','Log\u00edstica y Transporte']
+  };
+  Object.entries(categoryGroups).forEach(([label,values])=>{const group=document.createElement('optgroup');group.label=label;values.forEach(value=>{const option=document.createElement('option');option.value=value;option.textContent=display(value);group.append(option)});$('shopCategory').append(group)});
+  const objectPreviews=new Map();
+  function setPreview(id,file){const old=objectPreviews.get(id);if(old)URL.revokeObjectURL(old);const url=URL.createObjectURL(file);objectPreviews.set(id,url);$(id).src=url;$(id).classList.remove('hidden');return url}
+  async function optimizeImage(file,maxDimension=720,maxBytes=131072){
+    if(!file||!['image/jpeg','image/png','image/webp','image/gif'].includes(file.type))throw new Error('Selecciona una imagen PNG, JPG, GIF o WEBP.');
+    if(file.size>3*1024*1024)throw new Error('La imagen original debe pesar como maximo 3 MB.');
+    let image,revoke;
+    try{image=await createImageBitmap(file,{imageOrientation:'from-image'})}catch{
+      const url=URL.createObjectURL(file);revoke=()=>URL.revokeObjectURL(url);
+      try{image=await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('No se pudo leer la imagen. Prueba con otra foto.'));img.src=url})}catch(error){revoke();throw error}
+    }
+    try{
+      const w=image.width||image.naturalWidth,h=image.height||image.naturalHeight;
+      if(!w||!h||w*h>50000000)throw new Error('La resolucion es demasiado grande. Elige una imagen de menos de 50 megapixeles.');
+      const ratio=Math.min(1,maxDimension/Math.max(w,h));let width=Math.max(1,Math.round(w*ratio)),height=Math.max(1,Math.round(h*ratio));
+      const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');if(!ctx)throw new Error('Este navegador no puede optimizar imagenes.');
+      let blob=null;
+      for(let step=0;step<7;step++){
+        canvas.width=width;canvas.height=height;ctx.drawImage(image,0,0,width,height);
+        blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/webp',Math.max(.48,.82-step*.055)));
+        if(!blob)throw new Error('No se pudo optimizar la imagen.');
+        if(blob.size<=maxBytes)break;
+        if(step>=2){width=Math.max(64,Math.round(width*.82));height=Math.max(64,Math.round(height*.82))}
+      }
+      if(!blob||blob.size>maxBytes)throw new Error('La imagen sigue siendo muy pesada. Prueba con una foto mas sencilla.');
+      const extension=blob.type==='image/webp'?'webp':blob.type==='image/png'?'png':'jpg';
+      return new File([blob],'imagen-'+crypto.randomUUID()+'.'+extension,{type:blob.type,lastModified:Date.now()});
+    }finally{image?.close?.();revoke?.()}
+  }
+  async function uploadOptimized(bucket,file,userId){
+    const path=userId+'/'+crypto.randomUUID()+'.'+(file.type==='image/webp'?'webp':file.type==='image/png'?'png':'jpg');
+    const {error}=await requireBackend().storage.from(bucket).upload(path,file,{contentType:file.type,cacheControl:'31536000',upsert:false});
+    if(error)throw error;
+    return {path,url:_supabase.storage.from(bucket).getPublicUrl(path).data.publicUrl};
+  }
+  async function removeUploaded(bucket,path){if(path&&_supabase){try{await _supabase.storage.from(bucket).remove([path])}catch{}}}
+  function storedMediaPath(url,bucket){try{const parsed=new URL(url),prefix='/storage/v1/object/public/'+bucket+'/';return parsed.origin===SUPABASE_URL&&parsed.pathname.startsWith(prefix)?decodeURIComponent(parsed.pathname.slice(prefix.length)):null}catch{return null}}
+  $('uploadBtn').onclick=()=>$('fileInput').click();
+  $('fileInput').onchange=async()=>{
+    const file=$('fileInput').files[0];if(!file)return;setError('formError','');$('uploadBtn').disabled=true;$('publishBtn').disabled=true;
+    try{previewFile=await optimizeImage(file,640,131072);setPreview('preview',previewFile);$('uploadPrompt').classList.add('hidden');if(file.type==='image/gif')showToast('El GIF se optimizo como imagen estatica para ahorrar datos.')}catch(error){setError('formError',error.message)}finally{$('uploadBtn').disabled=false;$('publishBtn').disabled=false;$('fileInput').value=''}
+  };
+  $('regAvatarBtn').onclick=()=>$('regAvatarInput').click();
+  $('regAvatarInput').onchange=async()=>{
+    const file=$('regAvatarInput').files[0];if(!file)return;setError('regError','');$('regAvatarBtn').disabled=true;$('regSubmitBtn').disabled=true;
+    try{regAvatarFile=await optimizeImage(file,320,65536);setPreview('regAvatarPreview',regAvatarFile)}catch(error){setError('regError',error.message)}finally{$('regAvatarBtn').disabled=false;$('regSubmitBtn').disabled=false;$('regAvatarInput').value=''}
+  };
+
+  // Pending uploads survive email confirmation without storing any password.
+  const pendingMemory=new Map();
+  function openDraftDB(){return new Promise((resolve,reject)=>{if(!window.indexedDB){reject(new Error('No hay almacenamiento local.'));return}const request=indexedDB.open(PREFIX+'onboarding',1);request.onupgradeneeded=()=>request.result.createObjectStore('pending',{keyPath:'id'});request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
+  async function savePending(id,value){
+    const record={id,...value};pendingMemory.set(id,record);
+    try{const db=await openDraftDB();await new Promise((resolve,reject)=>{const tx=db.transaction('pending','readwrite');tx.objectStore('pending').put(record);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)}});return true}catch{return false}
+  }
+  async function getPending(id){
+    if(pendingMemory.has(id))return pendingMemory.get(id);
+    try{const db=await openDraftDB();return await new Promise((resolve,reject)=>{const tx=db.transaction('pending');const request=tx.objectStore('pending').get(id);request.onsuccess=()=>resolve(request.result||null);request.onerror=()=>reject(request.error);tx.oncomplete=()=>db.close()})}catch{return null}
+  }
+  async function deletePending(id){pendingMemory.delete(id);try{const db=await openDraftDB();await new Promise(resolve=>{const tx=db.transaction('pending','readwrite');tx.objectStore('pending').delete(id);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();resolve()}})}catch{}}
+  async function sendFormspree(subject,data){
+    if(!FORMSPREE_ENDPOINT)return false;
+    try{const response=await apiFetch(FORMSPREE_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:subject,_replyto:data.correo||'',plataforma:'IBAGUE TQM',fecha:new Date().toISOString(),...data})});return response.ok}catch{return false}
+  }
+  function switchAuthTab(type){
+    const login=type==='login';$('tabLoginBtn').classList.toggle('active',login);$('tabRegisterBtn').classList.toggle('active',!login);$('tabLoginBtn').setAttribute('aria-selected',String(login));$('tabRegisterBtn').setAttribute('aria-selected',String(!login));$('loginForm').classList.toggle('hidden',!login);$('registerForm').classList.toggle('hidden',login);
+  }
+  function openAuth(tab='login',pending=null){pendingAuthAction=typeof pending==='function'?pending:null;switchAuthTab(tab);openModal('authModal')}
+  function dismissAuth(){closeModal('authModal');pendingAuthAction=null}
+  function runPendingAuth(){const action=pendingAuthAction;pendingAuthAction=null;if(action)setTimeout(action,100)}
+  $('tabLoginBtn').onclick=()=>switchAuthTab('login');$('tabRegisterBtn').onclick=()=>switchAuthTab('register');$('authCloseBtn').onclick=dismissAuth;
+  $('loginTopBtn').onclick=()=>{closeMenu();openAuth('login')};$('accountBtn').onclick=()=>currentUserProfile?openProfileModal():openAuth('login');
+  $('menuProfileBtn').onclick=()=>{closeMenu();openProfileModal()};$('drawerUser').onclick=()=>{closeMenu();openProfileModal()};$('menuSellBtn').onclick=()=>{closeMenu();openCreateFlow()};
+  function selectRole(role){
+    $('roleCompradorLbl').classList.toggle('selected',role==='comprador');$('roleVendedorLbl').classList.toggle('selected',role==='vendedor');
+    if(role==='vendedor'&&!commerceDraft)startVendedorOnboarding();
+  }
+  document.querySelectorAll('input[name="userRole"]').forEach(input=>input.onchange=()=>selectRole(input.value));
+  function applyRoleUI(){
+    const logged=!!currentUserProfile;$('loginTopBtn').classList.toggle('hidden',logged);$('menuProfileBtn').classList.toggle('hidden',!logged);$('drawerUser').classList.toggle('hidden',!logged);
+    const canSell=logged&&(currentUserProfile.role||'comprador')==='comprador';$('sellBtn').classList.toggle('hidden',!canSell);$('menuSellBtn').classList.toggle('hidden',!canSell);
+    if(logged){const u=currentUserProfile;$('drawerAvatar').src=safeMedia(u.avatar_url,AVATAR_IMG);$('drawerName').textContent=u.full_name||'Usuario';$('drawerRole').textContent=(u.role||'comprador').toUpperCase();$('accountLabel').textContent=(u.first_name||u.full_name||'Mi cuenta').split(' ')[0]}else{$('accountLabel').textContent='Mi cuenta'}
+  }
+  async function loadUserProfile(userId){
+    const {data,error}=await requireBackend().from('profiles').select(PROFILE_FIELDS).eq('id',userId).single();
+    if(error||!data){currentUserProfile=null;applyRoleUI();return false}
+    currentUserProfile=data;applyRoleUI();return true;
+  }
+  async function checkAuthSession(){
+    if(!_supabase)return;
+    try{const {data:{session},error}=await _supabase.auth.getSession();if(error)throw error;currentAuthUser=session?.user||null;if(session){let resumedShop=null;try{resumedShop=await resumeRegistration(session.user.id)}catch{}await loadUserProfile(session.user.id);if(resumedShop)await loadCatalog(true)}else{currentUserProfile=null;applyRoleUI()}}catch{applyRoleUI()}
+  }
+  async function publishDraftShop(draft,userId){
+    let uploaded=null;
+    try{
+      if(!draft.logoUrl){if(!draft.file)throw new Error('Selecciona el logo de tu comercio.');uploaded=await uploadOptimized('logos',draft.file,userId)}
+      const payload={business_id:draft.business_id||crypto.randomUUID(),name:draft.name,category:draft.category,logo:draft.logoUrl||uploaded.url,owner_id:userId};draft.business_id=payload.business_id;
+      const {data,error}=await requireBackend().from('shops').upsert(payload,{onConflict:'business_id'}).select(SHOP_FIELDS).single();
+      if(error)throw error;draft.logoUrl=data.logo;writeStore('my-shop-'+userId,shopKey(data));invalidatePublicCache();return data;
+    }catch(error){if(uploaded)await removeUploaded('logos',uploaded.path);throw error}
+  }
+  const resumingUsers=new Map();
+  async function resumeRegistration(userId){
+    if(resumingUsers.has(userId))return resumingUsers.get(userId);
+    const task=(async()=>{
+      const pending=await getPending(userId);if(!pending)return null;let shop=null;
+      try{
+        if(pending.avatar){
+          const uploaded=await uploadOptimized('avatars',pending.avatar,userId);
+          const {error}=await requireBackend().from('profiles').update({avatar_url:uploaded.url}).eq('id',userId);
+          if(error){await removeUploaded('avatars',uploaded.path);throw error}
+          pending.avatar=null;await savePending(userId,pending);
+        }
+        if(pending.shop){shop=await publishDraftShop(pending.shop,userId);const {error}=await requireBackend().from('profiles').update({role:'vendedor'}).eq('id',userId);if(error)throw error;pending.shop=null;await savePending(userId,pending)}
+        await deletePending(userId);return shop;
+      }catch(error){showToast('Tu cuenta existe, pero hay datos pendientes de guardar. Vuelve a iniciar sesion para reintentar.');throw error}
+    })();resumingUsers.set(userId,task);try{return await task}finally{resumingUsers.delete(userId)}
+  }
+  $('loginForm').onsubmit=async event=>{
+    event.preventDefault();setError('loginError','');const button=$('loginSubmitBtn');button.disabled=true;button.textContent='Ingresando...';
+    try{
+      const {data,error}=await requireBackend().auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});
+      if(error){setError('loginError',error.code==='email_not_confirmed'?'Confirma tu correo antes de iniciar sesion.':error.status===400?'Correo o contrasena incorrectos.':backendMessage(error));return}
+      currentAuthUser=data.user;let pendingFailed=false;try{await resumeRegistration(data.user.id)}catch{pendingFailed=true}
+      const ok=await loadUserProfile(data.user.id);
+      if(!ok){setError('loginError','La cuenta existe, pero no se pudo cargar el perfil. Revisa que el SQL este instalado.');return}
+      $('loginPassword').value='';closeModal('authModal');showToast(pendingFailed?'Sesion iniciada. No se pudo terminar de guardar tu foto o comercio; vuelve a iniciar sesion para reintentar.':'Bienvenido de nuevo, '+(currentUserProfile.first_name||currentUserProfile.full_name||'').split(' ')[0]+'.');runPendingAuth();await loadCatalog(true);
+    }catch(error){setError('loginError',backendMessage(error))}finally{button.disabled=false;button.innerHTML='Ingresar'+icons.arrow}
+  };
+  $('registerForm').onsubmit=async event=>{
+    event.preventDefault();setError('regError','');
+    const firstName=$('regFirstName').value.trim(),lastName=$('regLastName').value.trim(),phone=$('regPhone').value.trim();
+    const role=document.querySelector('input[name="userRole"]:checked').value,email=$('regEmail').value.trim(),password=$('regPassword').value;
+    if(!firstName||!lastName||!phone){setError('regError','Completa tu nombre, apellido y telefono.');return}
+    if(!regAvatarFile){setError('regError','Selecciona una foto de perfil.');return}
+    if(password.length<6){setError('regError','La contrasena debe tener al menos 6 caracteres.');return}
+    if(role==='vendedor'&&!commerceDraft){startVendedorOnboarding();return}
+    const button=$('regSubmitBtn');button.disabled=true;button.textContent='Creando cuenta...';
+    try{
+      const redirect=new URL('index.html',location.href).href;
+      const {data,error}=await requireBackend().auth.signUp({email,password,options:{emailRedirectTo:redirect,data:{first_name:firstName,last_name:lastName,full_name:firstName+' '+lastName,phone,role}}});
+      if(error||!data.user){setError('regError',error?.status===429?'Demasiados intentos. Espera unos minutos y vuelve a intentarlo.':error?.code==='weak_password'?'Elige una contrasena mas segura.':error?.code==='user_already_exists'?'Este correo ya tiene una cuenta. Inicia sesion.':backendMessage(error));return}
+      if(data.user.identities?.length===0){setError('regError','Este correo ya tiene una cuenta. Inicia sesion.');return}
+      const draft=role==='vendedor'&&commerceDraft?{name:commerceDraft.name,category:commerceDraft.category,file:commerceDraft.file,business_id:commerceDraft.business_id,logoUrl:commerceDraft.logoUrl||''}:null;
+      const persisted=await savePending(data.user.id,{avatar:regAvatarFile,shop:draft});
+      if(!data.session){
+        showToast('Cuenta creada. Revisa tu correo para confirmar el registro.');
+        $('regNotice').textContent=persisted?'Confirma tu correo y vuelve a este dispositivo para completar la foto y el comercio.':'Mantiene esta pestana abierta: no pudimos guardar las imagenes pendientes en el dispositivo.';$('regNotice').classList.remove('hidden');
+        $('loginEmail').value=email;$('regPassword').value='';switchAuthTab('login');
+        setError('loginError','Confirma el enlace enviado a '+email+'. Despues inicia sesion en este dispositivo.');return;
+      }
+      currentAuthUser=data.user;let shop=null,pendingFailed=false;try{shop=await resumeRegistration(data.user.id)}catch{pendingFailed=true}
+      if(!await loadUserProfile(data.user.id)){setError('regError','Cuenta creada. No se pudo leer tu perfil. Revisa la instalacion SQL e inicia sesion.');return}
+      void sendFormspree('Nuevo registro en IBAGUE TQM',{nombre:firstName,apellido:lastName,telefono:phone,correo:email,rol:role,nombre_comercio:draft?.name||''});
+      $('registerForm').reset();regAvatarFile=null;commerceDraft=null;onboardingMode=false;$('regAvatarPreview').src=AVATAR_IMG;selectRole('comprador');$('regNotice').classList.add('hidden');closeModal('authModal');showToast(pendingFailed?'Cuenta creada. Quedan archivos o un comercio pendientes; vuelve a iniciar sesion para reintentar.':shop?'Tu cuenta y tu comercio ya estan listos.':'Tu cuenta se creo correctamente.');runPendingAuth();await loadCatalog(true);
+    }catch(error){setError('regError',backendMessage(error))}finally{button.disabled=false;button.innerHTML='Crear cuenta'+icons.arrow}
+  };
+  async function logoutUser(){
+    const button=$('logoutConfirmBtn');button.disabled=true;
+    try{const {error}=await requireBackend().auth.signOut();if(error)throw error;currentUserProfile=null;currentAuthUser=null;pendingAuthAction=null;catalogShop=null;applyRoleUI();closeAll();showToast('Sesion finalizada. Hasta pronto.')}catch(error){showToast(backendMessage(error))}finally{button.disabled=false}
+  }
+  $('pfLogout').onclick=()=>openModal('logoutModal');$('logoutCancelBtn').onclick=()=>closeModal('logoutModal');$('logoutConfirmBtn').onclick=logoutUser;
+  if(_supabase)_supabase.auth.onAuthStateChange((event,session)=>{
+    currentAuthUser=session?.user||null;
+    if(event==='SIGNED_OUT'){currentUserProfile=null;applyRoleUI()}
+    if(event==='TOKEN_REFRESHED'&&session)setTimeout(()=>loadUserProfile(session.user.id).catch(()=>{}),0);
+  });
+
+  function openCreateFlow(){if(!currentUserProfile){openAuth('register');return}onboardingMode=false;upgradeMode=currentUserProfile.role==='comprador';$('onboardNote').classList.add('hidden');setError('formError','');$('publishBtn').textContent='Publicar comercio';openModal('createModal')}
+  function startVendedorOnboarding(){
+    onboardingMode=true;$('onboardNote').classList.remove('hidden');$('publishBtn').textContent='Continuar con mi cuenta';setError('formError','');
+    if(commerceDraft){$('shopName').value=commerceDraft.name;$('shopCategory').value=commerceDraft.category;previewFile=commerceDraft.file;setPreview('preview',previewFile);$('uploadPrompt').classList.add('hidden')}
+    closeModal('authModal');openModal('createModal');
+  }
+  function closeCreateModal(){closeModal('createModal');if(onboardingMode){switchAuthTab('register');$('regNotice').textContent=commerceDraft?'Comercio "'+commerceDraft.name+'" listo. Paso 2 de 2: completa tu cuenta.':'Para registrarte como vendedor, completa primero los datos de tu comercio.';$('regNotice').classList.remove('hidden');openModal('authModal')}}
+  document.querySelectorAll('[data-close-create]').forEach(b=>b.onclick=closeCreateModal);document.querySelectorAll('[data-open-create]').forEach(b=>b.onclick=openCreateFlow);
+  $('shopForm').onsubmit=async event=>{
+    event.preventDefault();setError('formError','');const name=$('shopName').value.trim(),category=$('shopCategory').value;
+    if(!name||!category||!previewFile){setError('formError','Completa el nombre, la categoria y el logo de tu comercio.');return}
+    const draft={name,category,file:previewFile,business_id:commerceDraft?.business_id||crypto.randomUUID(),logoUrl:''};
+    if(onboardingMode){commerceDraft=draft;closeModal('createModal');switchAuthTab('register');$('regNotice').textContent='Comercio "'+name+'" listo. Paso 2 de 2: completa tu cuenta.';$('regNotice').classList.remove('hidden');openModal('authModal');return}
+    if(!currentUserProfile){closeModal('createModal');openAuth('login',openCreateFlow);return}
+    const button=$('publishBtn');button.disabled=true;button.textContent='Publicando...';
+    try{
+      const result=await publishDraftShop(draft,currentUserProfile.id);
+      if(upgradeMode){const {error}=await requireBackend().from('profiles').update({role:'vendedor'}).eq('id',currentUserProfile.id);if(error){showToast('Comercio publicado. No se pudo actualizar el rol; contacta al administrador.')}else{currentUserProfile.role='vendedor';applyRoleUI()}upgradeMode=false}
+      void sendFormspree('Comercio publicado en IBAGUE TQM',{nombre_completo:currentUserProfile.full_name,correo:currentAuthUser?.email||'',nombre_comercio:name,categoria_comercio:category,id_negocio:shopKey(result)});
+      $('shopForm').reset();previewFile=null;commerceDraft=null;$('preview').classList.add('hidden');$('uploadPrompt').classList.remove('hidden');closeModal('createModal');await loadCatalog(true);showToast('Tu comercio ya es parte de IBAGUE TQM.');
+    }catch(error){setError('formError',backendMessage(error))}finally{button.disabled=false;button.textContent='Publicar comercio'}
+  };
+  async function getMyShops(){
+    if(!currentAuthUser)return [];
+    const {data,error}=await requireBackend().from('shops').select(SHOP_FIELDS).eq('owner_id',currentAuthUser.id).order('created_at',{ascending:true}).limit(100);
+    if(error)throw error;if(data?.length)writeStore('my-shop-'+currentAuthUser.id,shopKey(data[0]));return data||[];
+  }
+  async function fetchSellerProducts(bids){if(!bids?.length)return [];const {data,error}=await requireBackend().from('products').select(PRODUCT_FIELDS).in('business_id',bids).order('created_at',{ascending:false}).limit(500);if(error)throw error;return (data||[]).map(mapProductRow)}
+  let pwAction=null;
+  function openAdminFlow(){
+    if(!currentUserProfile){openAuth('login');return}
+    pwAction=async()=>{try{const mine=await getMyShops();if(mine.length){if(PREVIEW)await openCatalog(shopKey(mine[0]),true);else location.href='catalogo.html?id='+encodeURIComponent(shopKey(mine[0]))}else showToast('Aun no tienes un comercio registrado.')}catch(error){showToast(backendMessage(error))}};
+    $('pwInput').value='';setError('pwError','');closeAll();openModal('passwordModal');requestAnimationFrame(()=>$('pwInput').focus());
+  }
+  $('passwordForm').onsubmit=async event=>{
+    event.preventDefault();if(!currentAuthUser){closeAll();openAuth('login');return}
+    const button=$('pwSubmit');button.disabled=true;button.textContent='Verificando...';setError('pwError','');
+    try{const {error}=await requireBackend().auth.signInWithPassword({email:currentAuthUser.email,password:$('pwInput').value});if(error){setError('pwError',error.status===400?'Contrasena incorrecta. Intentalo de nuevo.':backendMessage(error));return}$('pwInput').value='';closeModal('passwordModal');const action=pwAction;pwAction=null;if(action)await action()}catch(error){setError('pwError',backendMessage(error))}finally{button.disabled=false;button.textContent='Verificar y continuar'}
+  };
+  function openSupportFlow(){
+    if(SUPPORT_URL){const frame=$('supportFrame');$('localHelp').classList.add('hidden');frame.classList.remove('hidden');if(!frame.getAttribute('src')){$('supportLoader').classList.remove('hidden');frame.onload=()=>$('supportLoader').classList.add('hidden');frame.src=SUPPORT_URL;setTimeout(()=>{if(!$('supportLoader').classList.contains('hidden')){$('supportLoader').textContent='El soporte tarda en responder. Puedes cerrar e intentar de nuevo.'}},12000)}}
+    openModal('supportModal');
+  }
+  $('pfAdminBtn').onclick=openAdminFlow;$('pfSupportBtn').onclick=openSupportFlow;$('footerHelp').onclick=openSupportFlow;
+  $('pfPhotoBtn').onclick=()=>$('pfPhotoInput').click();
+  $('pfPhotoInput').onchange=async()=>{
+    const file=$('pfPhotoInput').files[0];if(!file||!currentAuthUser)return;const old=currentUserProfile?.avatar_url;let uploaded;
+    try{const optimized=await optimizeImage(file,320,65536);uploaded=await uploadOptimized('avatars',optimized,currentAuthUser.id);const {error}=await requireBackend().from('profiles').update({avatar_url:uploaded.url}).eq('id',currentAuthUser.id);if(error)throw error;currentUserProfile.avatar_url=uploaded.url;$('pfAvatar').src=uploaded.url;applyRoleUI();const oldPath=storedMediaPath(old,'avatars');if(oldPath)await removeUploaded('avatars',oldPath);showToast('Foto actualizada.')}catch(error){if(uploaded)await removeUploaded('avatars',uploaded.path);showToast(error.message||backendMessage(error))}finally{$('pfPhotoInput').value=''}
+  };
+
+  async function fetchOrdersFor(userId,bids){
+    if(!userId&&(!bids||!bids.length))return [];
+    let query=requireBackend().from('orders').select('id,buyer_id,business_id,product_name,total,created_at,buyer_name,buyer_email,status').order('created_at',{ascending:false}).limit(60);
+    if(userId)query=query.eq('buyer_id',userId);else query=query.in('business_id',bids);
+    const {data,error}=await query;if(error)throw error;return data||[];
+  }
+  async function fetchFavCount(userId){const {count,error}=await requireBackend().from('favorites').select('id',{head:true,count:'exact'}).eq('user_id',userId);if(error)throw error;return count||0}
+  function openProductsModal(){
+    $('pmList').innerHTML=sellerProducts.length?sellerProducts.map(p=>'<a class="pf-item product-card" href="'+productHref(p)+'" data-pid="'+esc(p._id)+'">'+imageMarkup(p._img,'')+'<span><b>'+esc(p._name)+'</b><small>'+esc(p._shop)+'</small></span><span class="pf-price">'+formatPrice(p._price)+'</span></a>').join(''):'<p class="pf-empty">Aun no tienes productos. Entra a Administrar para agregar tu primer producto.</p>';openModal('productsModal');
+  }
+  $('pmClose').onclick=()=>closeModal('productsModal');
+  async function openProfileModal(){
+    if(!currentUserProfile){openAuth('login');return}
+    const user=currentUserProfile,isSeller=user.role==='vendedor';$('pfAvatar').src=safeMedia(user.avatar_url,AVATAR_IMG);$('pfName').textContent=user.full_name||'Usuario';$('pfEmail').textContent=currentAuthUser?.email||'';$('pfRole').textContent=(user.role||'comprador').toUpperCase();
+    $('pfAdminBtn').classList.toggle('hidden',!isSeller);$('pfSupportBtn').classList.toggle('hidden',!isSeller);$('pfStats').innerHTML='';$('pfBody').innerHTML='<p class="pf-empty">Cargando tu actividad...</p>';openModal('profileModal');
+    try{
+      let mine=[];if(isSeller)mine=await getMyShops();const bids=mine.map(shopKey);
+      const [ordersResult,favsResult,productsResult]=await Promise.allSettled([fetchOrdersFor(isSeller?null:user.id,isSeller?bids:null),fetchFavCount(user.id),isSeller?fetchSellerProducts(bids):Promise.resolve([])]);
+      if(!currentUserProfile||currentUserProfile.id!==user.id)return;
+      const orders=ordersResult.status==='fulfilled'?ordersResult.value:null,favs=favsResult.status==='fulfilled'?favsResult.value:'?';sellerProducts=productsResult.status==='fulfilled'?productsResult.value:[];
+      const recents=getRecents();
+      const stats=isSeller?[[mine.length,'Tiendas'],[productsResult.status==='fulfilled'?sellerProducts.length:'?','Productos'],[orders?new Set(orders.map(o=>o.buyer_id).filter(Boolean)).size:'?','Clientes']]:[[orders?orders.length:'?','Compras'],[recents.length,'Vistos'],[favs,'Favoritos']];
+      $('pfStats').innerHTML=stats.map(([n,label],index)=>'<div'+(isSeller&&index===1?' class="clickable" id="pfProdStat" role="button" tabindex="0"':'')+'><b>'+n+'</b><small>'+label+(isSeller&&index===1?' &rsaquo;':'')+'</small></div>').join('');
+      if($('pfProdStat')){$('pfProdStat').onclick=openProductsModal;$('pfProdStat').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProductsModal()}}}
+      let html='';
+      if(isSeller){html+='<p class="pf-section-title">Mis tiendas</p>'+ (mine.length?mine.map(s=>'<a class="pf-item" href="catalogo.html?id='+encodeURIComponent(shopKey(s))+'" data-shop="'+esc(shopKey(s))+'">'+imageMarkup(s.logo,'')+'<span><b>'+esc(s.name)+'</b><small>'+esc(display(s.category))+'</small></span><span class="pf-price">Ver tienda '+icons.northeast+'</span></a>').join(''):'<p class="pf-empty">Aun no hay comercios asociados a tu cuenta.</p>')}
+      html+='<p class="pf-section-title">'+(isSeller?'Mis clientes':'Compras realizadas')+'</p>';
+      if(orders===null)html+='<p class="error">No pudimos cargar los pedidos. No se muestran cifras estimadas.</p>';
+      else if(!orders.length)html+='<p class="pf-empty">'+(isSeller?'Todavia no hay pedidos registrados en tus tiendas.':'Aun no tienes compras registradas. Descubre los comercios de tu ciudad.')+'</p>';
+      else html+=orders.slice(0,8).map(o=>'<div class="pf-item"><span style="padding:12px;background:var(--soft);border-radius:6px;color:var(--accent)">'+(isSeller?icons.user:icons.bag)+'</span><span><b>'+esc(isSeller?o.buyer_name||'Cliente':o.product_name||'Pedido')+'</b><small>'+esc((isSeller?o.product_name+' / ':'')+(o.status||'pendiente'))+'</small></span><span class="pf-price">'+formatPrice(o.total)+'</span></div>').join('');
+      html+='<p class="pf-section-title">Tus intereses / Ultimo visto</p>';
+      html+=recents.length?recents.slice(0,6).map(r=>'<a class="pf-item product-card" href="catalogo.html?id='+encodeURIComponent(r.bid)+'&product='+encodeURIComponent(r.id)+(PREVIEW?'&preview=1':'')+'" data-pid="'+esc(r.id)+'">'+imageMarkup(r.img,'')+'<span><b>'+esc(r.name)+'</b><small>'+esc(r.shop)+'</small></span><span class="pf-price">'+formatPrice(r.price)+'</span></a>').join(''):'<p class="pf-empty">Aqui apareceran los productos que visites en el directorio.</p>';
+      $('pfBody').innerHTML=html;
+    }catch(error){$('pfBody').innerHTML='<p class="error">'+esc(backendMessage(error))+'</p>'}
+  }
+  function findProduct(id){return [...products,...sellerProducts,...catalogProducts].find(p=>p._id===String(id))}
+  async function openProductDetail(product){
+    if(!product)return;trackProductView(product);closeModal('searchModal');
+    const demoFavorites=readStore('demo-favorites',[]),favorited=product._demo&&demoFavorites.includes(product._id);
+    $('detailContent').dataset.pid=product._id;
+    $('detailContent').innerHTML='<div class="detail-layout">'+imageMarkup(product._img,product._name,'class="detail-photo"')+'<div><p class="eyebrow">'+(product._demo?'Vista previa del directorio':'Descubre lo nuestro')+'</p><h2 id="detailTitle">'+esc(product._name)+'</h2><p class="detail-shop">'+icons.store+esc(product._shop||'Comercio local')+'</p><p class="detail-price">'+formatPrice(product._price)+'</p><p class="detail-description">'+esc(product._raw.description||'Descubre este producto en el catalogo del comercio.')+'</p><p class="detail-description">'+(product._ref?'Referencia '+esc(product._ref):'')+'</p>'+(product._demo?'<p class="notice">Producto de muestra. No es una oferta real ni permite realizar compras.</p>':'')+'<div class="detail-actions"><button class="primary" id="detailShopBtn">Ver comercio '+icons.arrow+'</button><button class="favorite-btn'+(favorited?' on':'')+'" id="detailFavorite" aria-label="Guardar en favoritos" aria-pressed="'+favorited+'">'+icons.heart+'</button></div></div></div>';
+    $('detailShopBtn').onclick=()=>{closeModal('detailModal');openCatalog(productBid(product))};$('detailFavorite').onclick=()=>toggleFavorite(product);openModal('detailModal');
+    if(!product._demo&&currentUserProfile){try{const {data,error}=await requireBackend().from('favorites').select('id').eq('user_id',currentUserProfile.id).eq('product_id',product._id).maybeSingle();if(!error&&$('detailContent').dataset.pid===product._id){$('detailFavorite').classList.toggle('on',!!data);$('detailFavorite').setAttribute('aria-pressed',String(!!data))}}catch{}}
+  }
+  async function toggleFavorite(product){
+    if(product._demo){const saved=readStore('demo-favorites',[]),exists=saved.includes(product._id);writeStore('demo-favorites',exists?saved.filter(id=>id!==product._id):[...saved,product._id]);$('detailFavorite').classList.toggle('on',!exists);$('detailFavorite').setAttribute('aria-pressed',String(!exists));showToast(exists?'Retirado de tus favoritos de muestra.':'Guardado en tus favoritos de muestra.');return}
+    if(!currentUserProfile){closeModal('detailModal');openAuth('login',()=>openProductDetail(product));return}
+    const button=$('detailFavorite'),remove=button.classList.contains('on');button.disabled=true;
+    try{const query=remove?requireBackend().from('favorites').delete().eq('user_id',currentUserProfile.id).eq('product_id',product._id):requireBackend().from('favorites').upsert({user_id:currentUserProfile.id,product_id:product._id},{onConflict:'user_id,product_id'});const {error}=await query;if(error)throw error;button.classList.toggle('on',!remove);button.setAttribute('aria-pressed',String(!remove));showToast(remove?'Producto retirado de favoritos.':'Producto guardado en favoritos.')}catch(error){showToast(backendMessage(error))}finally{button.disabled=false}
+  }
+  async function openCatalog(bid,admin=false){
+    if(!bid){showToast('No se encontro el comercio de este producto.');return}
+    closeModal('categoryModal');closeModal('profileModal');$('catalogTitle').textContent='Cargando comercio...';$('catalogContent').innerHTML='<p class="pf-empty">Preparando su catalogo.</p>';$('catalogIntro').textContent='';$('catalogTools').innerHTML='';openModal('catalogModal');
+    try{
+      let shop=shops.find(s=>shopKeys(s).includes(String(bid)));
+      if(!shop){
+        if(String(bid).startsWith('demo-')){shop=PREVIEW?demoShops.find(s=>shopKey(s)===bid):null}
+        else{const {data,error}=await requireBackend().from('shops').select(SHOP_FIELDS).eq('business_id',bid).maybeSingle();if(error)throw error;shop=data}
+      }
+      if(!shop){$('catalogTitle').textContent='Comercio no disponible';$('catalogContent').innerHTML='<p class="pf-empty">El comercio no existe o ya no esta publicado.</p>';return}
+      catalogShop=shop;const owner=currentAuthUser?.id===shop.owner_id;
+      $('catalogTitle').textContent=shop.name;$('catalogEyebrow').textContent=shop._demo?'Comercio de muestra':display(shop.category);$('catalogIntro').textContent=shop._demo?'Esta tienda es un ejemplo para previsualizar el directorio. No recibe pedidos.':shop.description||'Descubre lo que este comercio local tiene para ti.';
+      if(shop._demo)catalogProducts=demoRows.filter(r=>r.business_id===shopKey(shop)).map(mapProductRow);
+      else{catalogProducts=await fetchSellerProducts([shopKey(shop)]);catalogProducts=catalogProducts.map(p=>({...p,_shop:shop.name}))}
+      const phone=String(shop.phone||'').replace(/\D/g,'');let tools='';
+      if(owner)tools='<button class="primary" id="newProductBtn">'+icons.plus+' Agregar producto</button><button class="secondary" id="shopContactBtn">Datos del comercio</button>';
+      else if(phone&&!shop._demo)tools='<a class="primary" href="https://wa.me/'+encodeURIComponent(phone.length===10?'57'+phone:phone)+'?text='+encodeURIComponent('Hola, encontre tu comercio en IBAGUE TQM. Quisiera conocer mas sobre tus productos.')+'" target="_blank" rel="noopener noreferrer">Contactar comercio '+icons.arrow+'</a>';
+      else if(!shop._demo)tools='<p class="notice">El comercio aun no ha publicado un numero de contacto.</p>';
+      $('catalogTools').innerHTML=tools;
+      $('catalogContent').innerHTML=catalogProducts.length?'<div class="catalog-grid">'+catalogProducts.map(p=>'<div>'+renderProductCard(p)+(owner?'<button class="edit-button" data-edit-product="'+esc(p._id)+'">Editar producto</button>':'')+'</div>').join('')+'</div>':'<p class="pf-empty">'+(owner?'Tu catalogo esta listo. Agrega tu primer producto.':'Este comercio esta preparando su catalogo.')+'</p>';
+      if($('newProductBtn'))$('newProductBtn').onclick=()=>openProductEditor(null);
+      if($('shopContactBtn'))$('shopContactBtn').onclick=openShopContact;
+      document.querySelectorAll('[data-edit-product]').forEach(b=>b.onclick=()=>openProductEditor(findProduct(b.dataset.editProduct)));
+      if(admin&&!owner)showToast('Solo el propietario puede administrar este comercio.');
+    }catch(error){$('catalogTitle').textContent='No pudimos cargar el comercio';$('catalogContent').innerHTML='<p class="error">'+esc(backendMessage(error))+'</p><button class="secondary" id="retryCatalog">Reintentar</button>';$('retryCatalog').onclick=()=>openCatalog(bid,admin)}
+  }
+  function openShopContact(){
+    if(!catalogShop||catalogShop.owner_id!==currentAuthUser?.id)return;
+    let panel=$('contactModal');
+    if(!panel){panel=document.createElement('div');panel.id='contactModal';panel.className='backdrop hidden';panel.style.zIndex='1260';panel.innerHTML='<section class="modal small" role="dialog" aria-modal="true" aria-labelledby="contactTitle"><button type="button" class="close" id="contactClose" aria-label="Cerrar">'+icons.close+'</button><p class="eyebrow">Mi comercio</p><h2 id="contactTitle">Conecta con tus clientes</h2><form id="contactForm" style="margin-top:24px"><label>Descripcion<textarea id="contactDescription" maxlength="1000"></textarea></label><label>Telefono publico de WhatsApp<input id="contactPhone" type="tel" maxlength="20" placeholder="573001234567" pattern="[+0-9 ()-]{7,20}"></label><small class="storage">Este numero sera visible para los visitantes de tu tienda.</small><p class="error hidden" id="contactError"></p><button class="primary" id="contactSave">Guardar datos</button></form></section>';document.body.append(panel);$('contactClose').onclick=()=>closeModal('contactModal');panel.onclick=e=>{if(e.target===panel)closeModal('contactModal')}}
+    $('contactDescription').value=catalogShop.description||'';$('contactPhone').value=catalogShop.phone||'';setError('contactError','');openModal('contactModal');
+    $('contactForm').onsubmit=async event=>{event.preventDefault();const button=$('contactSave');button.disabled=true;const bid=shopKey(catalogShop);try{const {error}=await requireBackend().from('shops').update({description:$('contactDescription').value.trim(),phone:$('contactPhone').value.trim()}).eq('business_id',bid).eq('owner_id',currentAuthUser.id);if(error)throw error;invalidatePublicCache();closeModal('contactModal');await loadCatalog(true);await openCatalog(bid,true);showToast('Datos del comercio actualizados.')}catch(error){setError('contactError',backendMessage(error))}finally{button.disabled=false}};
+  }
+  function openProductEditor(product){
+    if(!catalogShop||catalogShop.owner_id!==currentAuthUser?.id){showToast('Solo el propietario puede modificar el catalogo.');return}
+    editingProduct=product;$('productForm').reset();$('editorTitle').textContent=product?'Editar producto':'Nuevo producto';$('productName').value=product?product._name:'';$('productPrice').value=product?product._price:'';$('productRef').value=product?product._ref:'';$('productDescription').value=product?product._raw.description||'':'';$('productImage').required=!product;$('productDeleteBtn').classList.toggle('hidden',!product);$('productDeleteBtn').dataset.confirm='';$('productDeleteBtn').textContent='Eliminar producto';setError('productError','');openModal('editorModal');
+  }
+  $('productForm').onsubmit=async event=>{
+    event.preventDefault();if(!catalogShop||!currentAuthUser||catalogShop.owner_id!==currentAuthUser.id)return;
+    const name=$('productName').value.trim(),price=Number($('productPrice').value);if(!name||!Number.isFinite(price)||price<0){setError('productError','Revisa el nombre y el precio.');return}
+    const button=$('productSaveBtn');button.disabled=true;button.textContent='Guardando...';setError('productError','');let uploaded=null,committed=false;
+    const bid=shopKey(catalogShop),oldImage=editingProduct?._img;
+    try{
+      const file=$('productImage').files[0];if(file){const optimized=await optimizeImage(file,960,204800);uploaded=await uploadOptimized('product-images',optimized,currentAuthUser.id)}
+      if(!uploaded&&!oldImage)throw new Error('Selecciona una imagen del producto.');
+      const payload={name,price,reference:$('productRef').value.trim(),description:$('productDescription').value.trim(),image:uploaded?.url||oldImage,business_id:bid,category:catalogShop.category};
+      const query=editingProduct?requireBackend().from('products').update(payload).eq('id',editingProduct._id).eq('business_id',bid):requireBackend().from('products').insert(payload);
+      const {error}=await query;if(error)throw error;committed=true;
+      if(uploaded&&oldImage){const path=storedMediaPath(oldImage,'product-images');if(path)await removeUploaded('product-images',path)}
+      invalidatePublicCache();closeModal('editorModal');await loadCatalog(true);await openCatalog(bid,true);showToast('Producto guardado en tu catalogo.');
+    }catch(error){if(uploaded&&!committed)await removeUploaded('product-images',uploaded.path);setError('productError',error.message||backendMessage(error))}finally{button.disabled=false;button.textContent='Guardar producto'}
+  };
+  $('productDeleteBtn').onclick=async()=>{
+    if(!editingProduct||!catalogShop||catalogShop.owner_id!==currentAuthUser?.id)return;
+    const button=$('productDeleteBtn');if(button.dataset.confirm!=='yes'){button.dataset.confirm='yes';button.textContent='Confirmar eliminacion permanente';return}
+    button.disabled=true;const bid=shopKey(catalogShop);
+    try{const {error}=await requireBackend().from('products').delete().eq('id',editingProduct._id).eq('business_id',bid);if(error)throw error;const path=storedMediaPath(editingProduct._img,'product-images');if(path)await removeUploaded('product-images',path);invalidatePublicCache();closeModal('editorModal');await loadCatalog(true);await openCatalog(bid,true);showToast('Producto eliminado.')}catch(error){setError('productError',backendMessage(error))}finally{button.disabled=false}
+  };
+  document.addEventListener('click',event=>{
+    if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||event.button!==0)return;
+    const card=event.target.closest('a.product-card');
+    if(card){let product=findProduct(card.dataset.pid);if(!product){const recent=getRecents().find(p=>p.id===card.dataset.pid);if(recent)product={_id:recent.id,_name:recent.name,_ref:recent.ref,_price:recent.price,_img:recent.img,_bid:recent.bid,_shop:recent.shop,_demo:recent.id.startsWith('demo-'),_raw:{}}}if(product){trackProductView(product);if(PREVIEW||card.closest('#catalogModal')){event.preventDefault();openProductDetail(product)}}return}
+    const shopLink=event.target.closest('a[data-shop]');if(shopLink&&PREVIEW){event.preventDefault();openCatalog(shopLink.dataset.shop)}
+  });
+  let wide=matchMedia('(min-width:761px)').matches;
+  window.addEventListener('resize',()=>{const next=matchMedia('(min-width:761px)').matches;if(next!==wide){wide=next;renderProducts()}});
+
+  $('downloadsBtn').onclick=()=>openModal('downloadsModal');
+  $('downloadsBtn').classList.toggle('hidden',!PREVIEW);
+  const downloadAllButton=document.createElement('button');downloadAllButton.className='primary download-all';downloadAllButton.type='button';downloadAllButton.innerHTML=icons.download+' Descargar todo en ZIP';
+  $('downloadsModal').querySelector('.intro').after(downloadAllButton);
+  const standaloneFilename=location.pathname.endsWith('/ibague-tqm.html')?'ibague-tqm.html':'index.html';
+  $('downloadsModal').querySelector('a[download="index.html"]').href='./'+standaloneFilename;
+  const deliverables=[[standaloneFilename,'index.html'],['01-ibague-tqm.sql','01-ibague-tqm.sql'],['02-verificacion.sql','02-verificacion.sql'],['manifest.json','manifest.json'],['sw.js','sw.js'],['icon.svg','icon.svg'],['catalogo.html','catalogo.html'],['negocio.html','negocio.html'],['LEEME.md','LEEME.md']];
+  function saveDownload(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}
+  // A small uncompressed ZIP keeps the standalone delivery dependency-free.
+  function makeZip(files){
+    const encoder=new TextEncoder(),parts=[],central=[],table=new Uint32Array(256);
+    for(let n=0;n<256;n++){let value=n;for(let k=0;k<8;k++)value=value&1?0xedb88320^(value>>>1):value>>>1;table[n]=value>>>0}
+    const crc32=bytes=>{let crc=0xffffffff;for(const byte of bytes)crc=table[(crc^byte)&255]^(crc>>>8);return (crc^0xffffffff)>>>0};
+    const now=new Date(),time=(now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()>>1),date=((now.getFullYear()-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate();
+    let offset=0,centralSize=0;
+    for(const [filename,bytes] of files){
+      const name=encoder.encode(filename),crc=crc32(bytes),local=new Uint8Array(30),lv=new DataView(local.buffer);
+      lv.setUint32(0,0x04034b50,true);lv.setUint16(4,20,true);lv.setUint16(10,time,true);lv.setUint16(12,date,true);lv.setUint32(14,crc,true);lv.setUint32(18,bytes.length,true);lv.setUint32(22,bytes.length,true);lv.setUint16(26,name.length,true);
+      parts.push(local,name,bytes);
+      const header=new Uint8Array(46),cv=new DataView(header.buffer);
+      cv.setUint32(0,0x02014b50,true);cv.setUint16(4,20,true);cv.setUint16(6,20,true);cv.setUint16(12,time,true);cv.setUint16(14,date,true);cv.setUint32(16,crc,true);cv.setUint32(20,bytes.length,true);cv.setUint32(24,bytes.length,true);cv.setUint16(28,name.length,true);cv.setUint32(42,offset,true);
+      central.push(header,name);centralSize+=header.length+name.length;offset+=local.length+name.length+bytes.length;
+    }
+    const end=new Uint8Array(22),ev=new DataView(end.buffer);ev.setUint32(0,0x06054b50,true);ev.setUint16(8,files.length,true);ev.setUint16(10,files.length,true);ev.setUint32(12,centralSize,true);ev.setUint32(16,offset,true);
+    return new Blob([...parts,...central,end],{type:'application/zip'});
+  }
+  downloadAllButton.onclick=async()=>{
+    downloadAllButton.disabled=true;downloadAllButton.textContent='Preparando archivos...';
+    try{const files=await Promise.all(deliverables.map(async([source,target])=>{const response=await fetch('./'+source,{cache:'no-cache'});if(!response.ok)throw new Error('No se pudo descargar '+source);return [target,new Uint8Array(await response.arrayBuffer())]}));saveDownload(makeZip(files),'ibague-tqm-entrega.zip');showToast('Archivos listos. Revisa LEEME.md antes de publicar.')}catch(error){showToast(error.message||'No se pudo preparar el archivo. Usa las descargas individuales.')}finally{downloadAllButton.disabled=false;downloadAllButton.innerHTML=icons.download+' Descargar todo en ZIP'}
+  };
+  $('creditsBtn').onclick=()=>{
+    let panel=$('creditsModal');if(!panel){panel=document.createElement('div');panel.id='creditsModal';panel.className='backdrop hidden';panel.innerHTML='<section class="modal small" role="dialog" aria-modal="true" aria-labelledby="creditsTitle"><button class="close" id="creditsClose" aria-label="Cerrar">'+icons.close+'</button><p class="eyebrow">Nuestra ciudad, nuestra inspiracion</p><h2 id="creditsTitle">Creditos visuales</h2><p class="intro">Panorama de Ibague: Duvanlopupa, Wikimedia Commons. Licencia CC BY-SA 4.0. Imagen recortada en pantalla y con una capa de contraste.</p><a class="secondary" style="display:inline-flex;align-items:center" href="https://commons.wikimedia.org/wiki/File:Panorama_Ibague.JPG" target="_blank" rel="noopener noreferrer">Ver fotografia y autor '+icons.northeast+'</a><p class="intro">Las fotografias del catalogo de muestra provienen de Pexels y Unsplash. Sus nombres y precios son ilustrativos y no representan comercios reales.</p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:var(--accent)">Licencia de la fotografia panoramica</a></section>';document.body.append(panel);$('creditsClose').onclick=()=>closeModal('creditsModal');panel.onclick=e=>{if(e.target===panel)closeModal('creditsModal')}}openModal('creditsModal');
+  };
+  let deferredPrompt=null;
+  const isStandalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+  const isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  if(!PREVIEW&&!isStandalone){
+    window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredPrompt=event;if(!readStore('install-dismissed'))$('pwaInstallBanner').classList.remove('hidden')});
+    if(isIOS&&!readStore('install-dismissed')){$('pwaText').textContent='Agrega IBAGUE TQM a tu pantalla de inicio.';$('pwaInstallBanner').classList.remove('hidden')}
+  }
+  $('pwaInstallBtn').onclick=async()=>{
+    if(deferredPrompt){await deferredPrompt.prompt();const choice=await deferredPrompt.userChoice;if(choice.outcome==='accepted')$('pwaInstallBanner').classList.add('hidden');deferredPrompt=null}
+    else showToast(isIOS?'En Safari: Compartir > Agregar a la pantalla de inicio.':'En el menu de tu navegador, selecciona Instalar aplicacion.');
+  };
+  $('pwaCloseBtn').onclick=()=>{$('pwaInstallBanner').classList.add('hidden');writeStore('install-dismissed',true)};
+  window.addEventListener('appinstalled',()=>{$('pwaInstallBanner').classList.add('hidden');deferredPrompt=null});
+  if(!PREVIEW&&'serviceWorker' in navigator&&window.isSecureContext){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(()=>{}))}
+  window.addEventListener('pagehide',event=>{clearTimeout(sliderTimer);if(!event.persisted)objectPreviews.forEach(url=>URL.revokeObjectURL(url));document.querySelectorAll('video').forEach(v=>v.pause())});
+  window.addEventListener('pageshow',event=>{if(event.persisted)showSlide(current)});
+
+  (async()=>{
+    const cached=getCachedCatalog();if(cached&&(cached.products.length||cached.shops.length))applyCatalog(cached);else if(PREVIEW)useDemo();
+    const [catalogLoaded]=await Promise.all([loadCatalog(),checkAuthSession(),fetchBannerVideos()]);
+    const bid=params.get('catalog')||params.get('shop');
+    if(bid){await openCatalog(bid);const productId=params.get('product');if(productId){const product=findProduct(productId);if(product)openProductDetail(product)}}
+    if(!catalogLoaded&&!PREVIEW)$('connectionNote').classList.remove('hidden');
+  })();
+  </script>
+</body>
+</html>
